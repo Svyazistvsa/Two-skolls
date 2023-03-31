@@ -4,6 +4,25 @@ let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36');
 
+let jpgArr = [
+    {img: "../jpg/skulls0", be: false},
+    {img: "../jpg/skulls1", be: false},
+    {img: "../jpg/skulls2", be: false},
+    {img: "../jpg/skulls3", be: false},
+    {img: "../jpg/skulls4", be: false},
+    {img: "../jpg/skulls5", be: false},
+    {img: "../jpg/skulls6", be: false},
+    {img: "../jpg/skulls7", be: false},
+    {img: "../jpg/skulls8", be: false},
+    {img: "../jpg/skulls9", be: false},
+    {img: "../jpg/skulls10", be: false},
+    {img: "../jpg/skulls11", be: false},
+    {img: "../jpg/skulls12", be: false},
+    {img: "../jpg/skulls13", be: false},
+    {img: "../jpg/skulls14", be: false},
+    {img: "../jpg/skulls15", be: false}
+]
+
 function render(area, column, originClass){
 
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).remove();
@@ -31,6 +50,7 @@ function render(area, column, originClass){
         let face = document.createElement('div');
         face.classList.add('face');
 
+
         div.append(shirt);
         div.append(face);
         flip.append(div);
@@ -42,13 +62,18 @@ function render(area, column, originClass){
     }
 }
 
+function addFace(collect, ){
+    //Надо писать через классы!!!
+}
+
 function flipOver(e){
     let target = e.target;
     if(target.classList.contains("shirt")){
         target.parentNode.classList.add("over");
-        //target.parentNode.classList.remove("card");
     }
 }
+
+
 
 cells16.onclick = () => render(game, 4, "titular");
 cells36.onclick = () => render(game, 6, "titular");
