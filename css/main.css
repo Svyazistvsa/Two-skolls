@@ -41,20 +41,21 @@ header {
     list-style-type: none;
     width: 100px;
     display: block;
+    z-index: 1;
 }
 
 .list > li {
     margin: 10px auto;
     background: #f7abab;
     border: solid 1px red;
-    z-index: 1000px;
+    
 }
 
 #game {            
     height: 850px;
     display: grid;
     justify-items: center;
-    row-gap: 40px;   
+    row-gap: 0;   
     perspective: 1000px;
 }
 
@@ -69,7 +70,7 @@ header {
     transition: .3s linear;
 }
 
-.flip:hover .card{
+.card:hover {
     transform: translateZ(15px);
 }
 
