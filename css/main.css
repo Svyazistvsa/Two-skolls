@@ -47,33 +47,30 @@ header {
     margin: 10px auto;
     background: #f7abab;
     border: solid 1px red;
-    z-index: 1;
+    z-index: 1000px;
 }
 
-#game {
-    z-index: -1;        
+#game {            
     height: 850px;
     display: grid;
     justify-items: center;
-    row-gap: 40px;
-    transform-style: preserve-3d;
-    perspective: 12;
+    row-gap: 40px;   
+    perspective: 1000px;
 }
 
-.flip{
+.flip {
     transform-style: preserve-3d;
-    perspective: 12;
 }
 
 .card{
     position: relative;
     border: 1px solid black;
     transform-style: preserve-3d;
-    transition: .7s linear;
+    transition: .3s linear;
 }
 
 .flip:hover .card{
-    transform: rotateX(30deg);
+    transform: translateZ(15px);
 }
 
 .c16 {
