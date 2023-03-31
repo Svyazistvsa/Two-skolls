@@ -42,5 +42,15 @@ function render(area, column, originClass){
     }
 }
 
+function flipOver(e){
+    let target = e.target;
+    if(target.classList.contains("shirt")){
+        target.parentNode.classList.add("over");
+        //target.parentNode.classList.remove("card");
+    }
+}
+
 cells16.onclick = () => render(game, 4, "titular");
 cells36.onclick = () => render(game, 6, "titular");
+
+game.addEventListener("click", flipOver);
