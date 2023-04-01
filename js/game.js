@@ -5,22 +5,22 @@ let game = document.querySelector('#game'),
     cells36 = document.querySelector('#cells36');
 
 let jpgArr = [
-    {img: "../jpg/skulls0", be: false},
-    {img: "../jpg/skulls1", be: false},
-    {img: "../jpg/skulls2", be: false},
-    {img: "../jpg/skulls3", be: false},
-    {img: "../jpg/skulls4", be: false},
-    {img: "../jpg/skulls5", be: false},
-    {img: "../jpg/skulls6", be: false},
-    {img: "../jpg/skulls7", be: false},
-    {img: "../jpg/skulls8", be: false},
-    {img: "../jpg/skulls9", be: false},
-    {img: "../jpg/skulls10", be: false},
-    {img: "../jpg/skulls11", be: false},
-    {img: "../jpg/skulls12", be: false},
-    {img: "../jpg/skulls13", be: false},
-    {img: "../jpg/skulls14", be: false},
-    {img: "../jpg/skulls15", be: false}
+    {img: "../jpg/skulls0.jpg", be: false},
+    {img: "../jpg/skulls1.jpg", be: false},
+    {img: "../jpg/skulls2.jpg", be: false},
+    {img: "../jpg/skulls3.jpg", be: false},
+    {img: "../jpg/skulls4.jpg", be: false},
+    {img: "../jpg/skulls5.jpg", be: false},
+    {img: "../jpg/skulls6.jpg", be: false},
+    {img: "../jpg/skulls7.jpg", be: false},
+    {img: "../jpg/skulls8.jpg", be: false},
+    {img: "../jpg/skulls9.jpg", be: false},
+    {img: "../jpg/skulls10.jpg", be: false},
+    {img: "../jpg/skulls11.jpg", be: false},
+    {img: "../jpg/skulls12.jpg", be: false},
+    {img: "../jpg/skulls13.jpg", be: false},
+    {img: "../jpg/skulls14.jpg", be: false},
+    {img: "../jpg/skulls15.jpg", be: false}
 ]
 
 function render(area, column, originClass){
@@ -60,10 +60,27 @@ function render(area, column, originClass){
         
         area.append(flip);
     }
+
+    let cardArr = area.querySelectorAll(".face");
+    faceAdd(jpgArr, cardArr, column);
 }
 
-function addFace(collect, ){
-    //Надо писать через классы!!!
+function faceAdd (jpgArr, cardArr, column){
+    let dub = 0, oimg, jArr;    
+
+    for(let i = 0; i < (column*column); ++i){
+        if(dub = 0){
+            if(oimg) jpgArr.find(item => item.img == oimg).be == true;
+            jArr = jpgArr.filter(item => item.be == false);
+            oimg = jArr[getRandom(0, (jArr.lenght-1))];             
+            dub = 2; 
+        }
+         
+        let rand = getRandom(0, (cardArr.lenght-1));        
+        cardArr[rand].style.background = `url(${oimg.img})`;
+        cardArr.splice(rand, 1);
+        dub -= 1;
+    }
 }
 
 function flipOver(e){
@@ -71,6 +88,12 @@ function flipOver(e){
     if(target.classList.contains("shirt")){
         target.parentNode.classList.add("over");
     }
+}
+
+function getRandom(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 
