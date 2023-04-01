@@ -66,19 +66,27 @@ function render(area, column, originClass){
 }
 
 function faceAdd (jpgArr, cardArr, column){
-    let dub = 0, oimg, jArr;    
-
+    let dub = 0, oimg, jArr; 
+    
     for(let i = 0; i < (column*column); ++i){
-        if(dub = 0){
-            if(oimg) jpgArr.find(item => item.img == oimg).be == true;
+        
+        if(dub == 0){
+            
+            if(oimg) {
+                let r = jpgArr.find(item => item.img == oimg.img);
+                r.be = true;
+                
+            };
+            
             jArr = jpgArr.filter(item => item.be == false);
-            oimg = jArr[getRandom(0, (jArr.lenght-1))];             
+            oimg = jArr[getRandom(0, (jArr.length-1))];    
+                     
             dub = 2; 
         }
-         
-        let rand = getRandom(0, (cardArr.lenght-1));        
+         alert(oimg.img);
+        let rand = getRandom(0, (cardArr.length-1));    
         cardArr[rand].style.background = `url(${oimg.img})`;
-        cardArr.splice(rand, 1);
+        delete cardArr.rand;
         dub -= 1;
     }
 }
