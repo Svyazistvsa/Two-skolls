@@ -102,7 +102,8 @@ header {
 
 .shirt {
     transform: rotateY(0deg);
-    background-color: yellow;
+    background-image: url(../jpg/shirt.jpg);
+    background-size: cover;
 }
 
 .face {

@@ -2,7 +2,8 @@
 
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
-    cells36 = document.querySelector('#cells36');
+    cells36 = document.querySelector('#cells36'),
+    isThis;
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -89,7 +90,7 @@ function faceAdd (jpgArr, cardArr, column){
         } else if(!cArr.length - 1){
             rand = 0;
         }
-        //alert(oimg.img);            
+                
         cArr[rand].style.backgroundImage = `url(${oimg.img})`;        
         cArr.splice(rand, 1);
         
@@ -99,9 +100,28 @@ function faceAdd (jpgArr, cardArr, column){
 
 function flipOver(e){
     let target = e.target;
-    if(target.classList.contains("shirt")){
-        target.parentNode.classList.add("over");
+    if (target.classList.contains("shirt")){
+        if (!isThis){
+            alert(isThis);
+            target.parentNode.classList.add("over");        
+            isThis = target.parentNode.querySelector(".face");
+        } else if (isThis){
+            alert(isThis);
+            target.parentNode.classList.add("over");         
+            if (isThis.style.backgroundImage == target.parentNode.querySelector(".face").style.backgroundImage){
+                isThis.parentNode.remove();
+                target.parentNode.remove();
+                isThis = undefined;
+            } else {
+                //let a = setTimeout((isThis) => document.isThis.parentNode.classList.remove("over"), 300);
+                isThis.parentNode.classList.remove("over");
+                let b = setTimeout(() => target.parentNode.classList.remove("over"), 500);
+                isThis = undefined;
+            }
+        }
+               
     }
+    
 }
 
 function getRandom(min, max) {
