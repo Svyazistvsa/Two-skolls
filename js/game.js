@@ -5,22 +5,23 @@ let game = document.querySelector('#game'),
     cells36 = document.querySelector('#cells36');
 
 let jpgArr = [
-    {img: "../jpg/skulls0.jpg", be: false},
-    {img: "../jpg/skulls1.jpg", be: false},
-    {img: "../jpg/skulls2.jpg", be: false},
-    {img: "../jpg/skulls3.jpg", be: false},
-    {img: "../jpg/skulls4.jpg", be: false},
-    {img: "../jpg/skulls5.jpg", be: false},
-    {img: "../jpg/skulls6.jpg", be: false},
-    {img: "../jpg/skulls7.jpg", be: false},
-    {img: "../jpg/skulls8.jpg", be: false},
-    {img: "../jpg/skulls9.jpg", be: false},
-    {img: "../jpg/skulls10.jpg", be: false},
-    {img: "../jpg/skulls11.jpg", be: false},
-    {img: "../jpg/skulls12.jpg", be: false},
-    {img: "../jpg/skulls13.jpg", be: false},
-    {img: "../jpg/skulls14.jpg", be: false},
-    {img: "../jpg/skulls15.jpg", be: false}
+    {img: "jpg/skulls0.jpg", be: false},
+    {img: "jpg/skulls1.jpg", be: false},
+    {img: "jpg/skulls2.jpg", be: false},
+    {img: "jpg/skulls3.jpg", be: false},
+    {img: "jpg/skulls4.jpg", be: false},
+    {img: "jpg/skulls5.jpg", be: false},
+    {img: "jpg/skulls6.jpg", be: false},
+    {img: "jpg/skulls7.jpg", be: false},
+    {img: "jpg/skulls8.jpg", be: false},
+    {img: "jpg/skulls9.jpg", be: false},
+    {img: "jpg/skulls10.jpg", be: false},
+    {img: "jpg/skulls11.jpg", be: false},
+    {img: "jpg/skulls12.jpg", be: false},
+    {img: "jpg/skulls13.jpg", be: false},
+    {img: "jpg/skulls14.jpg", be: false},
+    {img: "jpg/skulls15.jpg", be: false},
+    {img: "jpg/skulls16.jpg", be: false}
 ]
 
 function render(area, column, originClass){
@@ -66,16 +67,13 @@ function render(area, column, originClass){
 }
 
 function faceAdd (jpgArr, cardArr, column){
-    let dub = 0, oimg, jArr; 
+    let dub = 0, oimg, jArr, cArr = Array.from(cardArr); 
     
     for(let i = 0; i < (column*column); ++i){
-        
-        if(dub == 0){
-            
+        let rand;
+        if(dub == 0){            
             if(oimg) {
-                let r = jpgArr.find(item => item.img == oimg.img);
-                r.be = true;
-                
+                jpgArr.find(item => item.img == oimg.img).be = true;                
             };
             
             jArr = jpgArr.filter(item => item.be == false);
@@ -83,10 +81,16 @@ function faceAdd (jpgArr, cardArr, column){
                      
             dub = 2; 
         }
-         alert(oimg.img);
-        let rand = getRandom(0, (cardArr.length-1));    
-        cardArr[rand].style.background = `url(${oimg.img})`;
-        delete cardArr.rand;
+
+        if(cArr.length != 1){
+            rand = getRandom(0, (cArr.length-1));
+        } else if(!cArr.length - 1){
+            rand = 0;
+        }
+        //alert(oimg.img);            
+        cArr[rand].style.backgroundImage = `url(${oimg.img})`;        
+        cArr.splice(rand, 1);
+        
         dub -= 1;
     }
 }
