@@ -102,11 +102,11 @@ function flipOver(e){
     let target = e.target;
     if (target.classList.contains("shirt")){
         if (!isThis){
-            alert(isThis);
+            
             target.parentNode.classList.add("over");        
             isThis = target.parentNode.querySelector(".face");
         } else if (isThis){
-            alert(isThis);
+            
             target.parentNode.classList.add("over");         
             if (isThis.style.backgroundImage == target.parentNode.querySelector(".face").style.backgroundImage){
                 isThis.parentNode.remove();
