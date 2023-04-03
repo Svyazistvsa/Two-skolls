@@ -21,7 +21,9 @@ let jpgArr = [
     {img: "jpg/skulls13.jpg", be: false},
     {img: "jpg/skulls14.jpg", be: false},
     {img: "jpg/skulls15.jpg", be: false},
-    {img: "jpg/skulls16.jpg", be: false}
+    {img: "jpg/skulls16.jpg", be: false},
+    {img: "jpg/skulls17.jpg", be: false},
+    {img: "jpg/skulls18.jpg", be: false}
 ]
 
 function render(area, column, originClass){
