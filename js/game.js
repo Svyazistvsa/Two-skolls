@@ -70,8 +70,7 @@ function render(area, column, originClass){
 }
 
 function faceAdd (jpgArr, cardArr, column){
-    let dub = 0, oimg, jArr, cArr = Array.from(cardArr); 
-    
+    let dub = 0, oimg, jArr, cArr = Array.from(cardArr);     
     for(let i = 0; i < (column*column); ++i){
         let rand;
         if(dub == 0){            
@@ -90,10 +89,9 @@ function faceAdd (jpgArr, cardArr, column){
         } else if(!cArr.length - 1){
             rand = 0;
         }
-                
+
         cArr[rand].style.backgroundImage = `url(${oimg.img})`;        
-        cArr.splice(rand, 1);
-        
+        cArr.splice(rand, 1);        
         dub -= 1;
     }
 }
@@ -101,27 +99,26 @@ function faceAdd (jpgArr, cardArr, column){
 function flipOver(e){
     let target = e.target;
     if (target.classList.contains("shirt")){
-        if (!isThis){
-            
-            target.parentNode.classList.add("over");        
+        if (!isThis){            
+            target.parentNode.classList.add("over");
             isThis = target.parentNode.querySelector(".face");
-        } else if (isThis){
-            
-            target.parentNode.classList.add("over");         
+        } else if (isThis){            
+            target.parentNode.classList.add("over");
             if (isThis.style.backgroundImage == target.parentNode.querySelector(".face").style.backgroundImage){
-                isThis.parentNode.remove();
-                target.parentNode.remove();
-                isThis = undefined;
+                setTimeout(() => {
+                    isThis.parentNode.remove();
+                    isThis = undefined;
+               }, 1000);
+                setTimeout(() => target.parentNode.remove(), 1000);        
             } else {
-                //let a = setTimeout((isThis) => document.isThis.parentNode.classList.remove("over"), 300);
-                isThis.parentNode.classList.remove("over");
-                let b = setTimeout(() => target.parentNode.classList.remove("over"), 500);
-                isThis = undefined;
+                setTimeout(() => {
+                    isThis.parentNode.classList.remove("over");
+                    isThis = undefined;
+                }, 800);
+                setTimeout(() => target.parentNode.classList.remove("over"), 800);                
             }
-        }
-               
-    }
-    
+        }               
+    }    
 }
 
 function getRandom(min, max) {
