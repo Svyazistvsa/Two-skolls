@@ -5,6 +5,8 @@ let game = document.querySelector('#game'),
     cells36 = document.querySelector('#cells36'),
     isThis, timerI, points;
 
+    
+
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
     {img: "jpg/skulls1.jpg", be: false},
@@ -66,7 +68,7 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     faceAdd(jpgArr, cardArr, column);
-        if(column == 4) timer(180, timerI);
+        if(column == 4) timer(160, timerI);
         if(column == 6) timer(300, timerI);
 }
 
@@ -87,16 +89,11 @@ function faceAdd (jpgArr, cardArr, column){
             rand = getRandom(0, (cArr.length-1));
         } else if(cArr.length == 1){
             rand = 0;
-        } if(cArr.length == 0){
-            for(let i=0; i < jpgArr.length; i++){
-                jpgArr[i].be = false;
-                alert(jpgArr[i].be);
-            }
-        }
+        } 
 
         cArr[rand].style.backgroundImage = `url(${oimg.img})`;                
         cArr.splice(rand, 1);
-        if(cArr.length == 0){
+        if(cArr.length == 0){            
             for(let i=0; i < jpgArr.length; i++){
                 jpgArr[i].be = false;                
             }
@@ -110,7 +107,7 @@ function flipOver(e){
         open = game.querySelectorAll(".over"); 
     if(open.length > 1) return;
     
-    if (target.classList.contains("shirt")){                
+    if (target.classList.contains("shirt")){
         if (!isThis){            
             target.parentNode.classList.add("over");
             isThis = target.parentNode.querySelector(".face");
@@ -121,15 +118,18 @@ function flipOver(e){
                     isThis.parentNode.remove();
                     isThis = undefined;
                }, 800);
-                setTimeout(() => target.parentNode.remove(), 800);        
+                setTimeout(() => {
+                    target.parentNode.remove();                    
+                    
+                }, 800);                
             } else {
                 setTimeout(() => {
                     isThis.parentNode.classList.remove("over");
                     isThis = undefined;
                 }, 800);
                 setTimeout(() => target.parentNode.classList.remove("over"), 800);                
-            }
-        }               
+            }            
+        }
     }    
 }
 
@@ -156,13 +156,14 @@ function timer (time_limit, timerI){
 
     function startTimer(){
         timerI = setInterval(
-            () =>{                
+            () =>{        
                 timeP = timeP += 1;
                 timeL = time_limit - timeP;
                 span.innerHTML = fTimeLeft(timeL);                
                 if(span.innerHTML == `0:00`) {                    
                     stopGame(span.innerHTML, timerI);
                 }
+                if(!game.querySelectorAll(".card").length) stopGame(span.innerHTML, timerI);
             }, 1000
         )
     }
@@ -177,7 +178,7 @@ function stopGame(time, timerI){
     arr = time.split(':');
     minSec = arr[0] * 60;
     secSec = arr[1];
-    points = minSec + secSec;
+    points = +minSec + secSec;
     alert(points);
 }
 
