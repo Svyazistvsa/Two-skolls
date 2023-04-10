@@ -60,7 +60,7 @@ function render(area, column, originClass){
 
         if(column == 4) div.classList.add('c16');
         if(column == 6) div.classList.add('c36');
-        
+        flip.style.height = div.style.height + "10px";
         area.append(flip);
     }
 
@@ -120,8 +120,8 @@ function flipOver(e){
                 setTimeout(() => {
                     isThis.parentNode.remove();
                     isThis = undefined;
-               }, 1000);
-                setTimeout(() => target.parentNode.remove(), 1000);        
+               }, 800);
+                setTimeout(() => target.parentNode.remove(), 800);        
             } else {
                 setTimeout(() => {
                     isThis.parentNode.classList.remove("over");

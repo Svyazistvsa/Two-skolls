@@ -56,7 +56,7 @@ header {
 }
 
 #game {            
-    height: 800px;
+    height: 750px;
     display: grid;
     justify-items: center;
     row-gap: 0;   
