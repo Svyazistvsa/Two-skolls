@@ -23,6 +23,7 @@ header {
     justify-content: space-between;
     margin-bottom: 20px; 
 }
+
 #copyright {
     align-self: flex-end;
 }
@@ -55,7 +56,7 @@ header {
 }
 
 #game {            
-    height: 850px;
+    height: 800px;
     display: grid;
     justify-items: center;
     row-gap: 0;   
@@ -90,6 +91,7 @@ header {
     width: 75px;
     height: 100px;
 }
+
 .shirt, .face{
     position: absolute;
     width: 100%;

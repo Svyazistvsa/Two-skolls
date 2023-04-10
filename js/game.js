@@ -53,8 +53,7 @@ function render(area, column, originClass){
 
         let face = document.createElement('div');
         face.classList.add('face');
-
-
+        
         div.append(shirt);
         div.append(face);
         flip.append(div);
@@ -72,7 +71,7 @@ function render(area, column, originClass){
 function faceAdd (jpgArr, cardArr, column){
     let dub = 0, oimg, jArr, cArr = Array.from(cardArr);     
     for(let i = 0; i < (column*column); ++i){
-        let rand;
+        
         if(dub == 0){            
             if(oimg) {
                 jpgArr.find(item => item.img == oimg.img).be = true;                
@@ -83,15 +82,25 @@ function faceAdd (jpgArr, cardArr, column){
                      
             dub = 2; 
         }
-
+        let rand;
         if(cArr.length != 1){
             rand = getRandom(0, (cArr.length-1));
-        } else if(!cArr.length - 1){
+        } else if(cArr.length == 1){
             rand = 0;
+        } if(cArr.length == 0){
+            for(let i=0; i < jpgArr.length; i++){
+                jpgArr[i].be = false;
+                alert(jpgArr[i].be);
+            }
         }
 
-        cArr[rand].style.backgroundImage = `url(${oimg.img})`;        
-        cArr.splice(rand, 1);        
+        cArr[rand].style.backgroundImage = `url(${oimg.img})`;                
+        cArr.splice(rand, 1);
+        if(cArr.length == 0){
+            for(let i=0; i < jpgArr.length; i++){
+                jpgArr[i].be = false;                
+            }
+        }        
         dub -= 1;
     }
 }
