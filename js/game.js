@@ -3,7 +3,7 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis/*, count = 0*/;
+    isThis, andGame;
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -66,7 +66,7 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     faceAdd(jpgArr, cardArr, column);
-        if(column == 4) timer(180);
+        if(column == 4) timer(10);
         if(column == 6) timer(300);
 }
 
@@ -152,15 +152,18 @@ function timer (time_limit){
         if (seconds < 10) {
             seconds = `0${seconds}`;            
         }
+        //alert(`${minutes}:${seconds}`);
         return `${minutes}:${seconds}`;
     }
 
     function startTimer(){
         timerI = setInterval(
-            () =>{
+            () =>{                
                 timeP = timeP += 1;
                 timeL = time_limit - timeP;
                 span.innerHTML = fTimeLeft(timeL);
+                
+                if(span.innerHTML == `0:00`) clearInterval(timerI);
             }, 1000
         )
     }
