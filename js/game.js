@@ -36,7 +36,7 @@ function render(area, column, originClass){
     let flipps = area.querySelectorAll('.flip');
     if(flipps.length != 0){
         for(let i=0; i<flipps.length; i++){
-            flipps[i].remove();
+            flipps[i].remove();            
         }
     }
 
@@ -162,8 +162,12 @@ function timer (time_limit, timerI){
                 span.innerHTML = fTimeLeft(timeL);                
                 if(span.innerHTML == `0:00`) {                    
                     stopGame(span.innerHTML, timerI);
+                    span.remove();
                 }
-                if(!game.querySelectorAll(".card").length) stopGame(span.innerHTML, timerI);
+                if(!game.querySelectorAll(".card").length){
+                    stopGame(span.innerHTML, timerI)
+                    span.remove();
+                };
             }, 1000
         )
     }
@@ -173,7 +177,7 @@ function timer (time_limit, timerI){
 }
 
 function stopGame(time, timerI){
-    clearInterval(timerI);
+    clearInterval(timerI);    
     let minSec, secSec, arr;
     arr = time.split(':');
     minSec = arr[0] * 60;
