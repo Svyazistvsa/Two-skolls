@@ -66,7 +66,7 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     faceAdd(jpgArr, cardArr, column);
-        if(column == 4) timer(10, timerI);
+        if(column == 4) timer(180, timerI);
         if(column == 6) timer(300, timerI);
 }
 
