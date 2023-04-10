@@ -3,7 +3,7 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis, andGame;
+    isThis, timerI, points;
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -66,8 +66,8 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     faceAdd(jpgArr, cardArr, column);
-        if(column == 4) timer(10);
-        if(column == 6) timer(300);
+        if(column == 4) timer(10, timerI);
+        if(column == 6) timer(300, timerI);
 }
 
 function faceAdd (jpgArr, cardArr, column){
@@ -77,11 +77,9 @@ function faceAdd (jpgArr, cardArr, column){
         if(dub == 0){            
             if(oimg) {
                 jpgArr.find(item => item.img == oimg.img).be = true;                
-            };
-            
+            };            
             jArr = jpgArr.filter(item => item.be == false);
-            oimg = jArr[getRandom(0, (jArr.length-1))];    
-                     
+            oimg = jArr[getRandom(0, (jArr.length-1))];                        
             dub = 2; 
         }
         let rand;
@@ -141,8 +139,8 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function timer (time_limit){
-    let timeP = 0, timeL, timerI,
+function timer (time_limit, timerI){
+    let timeP = 0, timeL,
         span = document.createElement("span");
         span.classList.add("timer");
         
@@ -152,7 +150,7 @@ function timer (time_limit){
         if (seconds < 10) {
             seconds = `0${seconds}`;            
         }
-        //alert(`${minutes}:${seconds}`);
+        
         return `${minutes}:${seconds}`;
     }
 
@@ -161,15 +159,26 @@ function timer (time_limit){
             () =>{                
                 timeP = timeP += 1;
                 timeL = time_limit - timeP;
-                span.innerHTML = fTimeLeft(timeL);
-                
-                if(span.innerHTML == `0:00`) clearInterval(timerI);
+                span.innerHTML = fTimeLeft(timeL);                
+                if(span.innerHTML == `0:00`) {                    
+                    stopGame(span.innerHTML, timerI);
+                }
             }, 1000
         )
     }
     game.after(span);
     span.innerHTML =`${fTimeLeft(time_limit)}`;
     startTimer()
+}
+
+function stopGame(time, timerI){
+    clearInterval(timerI);
+    let minSec, secSec, arr;
+    arr = time.split(':');
+    minSec = arr[0] * 60;
+    secSec = arr[1];
+    points = minSec + secSec;
+    alert(points);
 }
 
 cells16.onclick = () => render(game, 4, "titular");
