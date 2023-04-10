@@ -3,7 +3,7 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis;
+    isThis/*, count = 0*/;
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -106,8 +106,11 @@ function faceAdd (jpgArr, cardArr, column){
 }
 
 function flipOver(e){
-    let target = e.target;
-    if (target.classList.contains("shirt")){
+    let target = e.target,
+        open = game.querySelectorAll(".over"); 
+    if(open.length > 1) return;
+    
+    if (target.classList.contains("shirt")){                
         if (!isThis){            
             target.parentNode.classList.add("over");
             isThis = target.parentNode.querySelector(".face");
