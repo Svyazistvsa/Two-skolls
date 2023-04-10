@@ -66,6 +66,8 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     faceAdd(jpgArr, cardArr, column);
+        if(column == 4) timer(180);
+        if(column == 6) timer(300);
 }
 
 function faceAdd (jpgArr, cardArr, column){
@@ -139,7 +141,33 @@ function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+function timer (time_limit){
+    let timeP = 0, timeL, timerI,
+        span = document.createElement("span");
+        span.classList.add("timer");
+        
+    function fTimeLeft(time){
+        const minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+        if (seconds < 10) {
+            seconds = `0${seconds}`;            
+        }
+        return `${minutes}:${seconds}`;
+    }
 
+    function startTimer(){
+        timerI = setInterval(
+            () =>{
+                timeP = timeP += 1;
+                timeL = time_limit - timeP;
+                span.innerHTML = fTimeLeft(timeL);
+            }, 1000
+        )
+    }
+    game.after(span);
+    span.innerHTML =`${fTimeLeft(time_limit)}`;
+    startTimer()
+}
 
 cells16.onclick = () => render(game, 4, "titular");
 cells36.onclick = () => render(game, 6, "titular");

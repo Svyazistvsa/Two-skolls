@@ -104,7 +104,7 @@ header {
 
 .shirt {
     transform: rotateY(0deg);
-    background-image: url(../jpg/shirt.jpg);
+    background-image: url(../jpg/shirt0.jpg);
     background-size: cover;
 }
 
@@ -114,3 +114,11 @@ header {
     background-size: cover;
 }
 
+.timer {
+    display: block;
+    width: 100%;    
+    text-align: center;
+    font-size: 40pt;
+    color: orange;
+    align-items: baseline;
+}
