@@ -4,6 +4,7 @@ body {
     /*background: linear-gradient(to bottom, #EC9183, #9B3905);*/
     background-image: url(../jpg/wollpaper4.jpg);
     background-size: cover;
+    align-content: center;
 }
 
 #container {
@@ -121,4 +122,45 @@ header {
     font-size: 40pt;
     color: orange;
     align-items: baseline;
+}
+
+.screen {
+    position: absolute;
+    left: calc((100% - 900px)/2); 
+    top:15px;
+    z-index: 1000;
+    width: 900px;
+    height: 930px;
+    background: url(../jpg/menu1.jpg);
+    background-size: cover;
+    border: 3px solid black;
+}
+
+.shirtC, .shirtR, .backR, .backG{
+    margin: 10px auto;
+}
+
+.shirtC {
+    width: 270px;
+    height: 410px;    
+    border: black 2px solid;
+    background: url(../jpg/shirt0.jpg);
+    background-size: cover;
+}
+
+.shirtR, .backR {
+    text-align: center;        
+}
+
+.backG {
+    width: 500px;
+    height: 270px;    
+    border: white 2px solid;
+    background: url(../jpg/wollpaper1.jpg);
+    background-size: cover;
+}
+
+.menuBut {
+    display: block;
+    margin: 30px auto;
 }
