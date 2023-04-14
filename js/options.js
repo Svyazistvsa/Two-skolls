@@ -21,8 +21,8 @@ function rendScrean (){
             <input name="woll" type="radio" value="jpg/wollpaper2.jpg" class="rad"></input>
             <input name="woll" type="radio" value="jpg/wollpaper3.jpg" class="rad"></input>
         </div>
-        <input type="button" value="Принять" name="confirm"> 
-        <input type="button" value="Отбой" name="cansel">       
+        <input type="button" value="Принять" name="confirm" class="butMenu"> 
+        <input type="button" value="Отбой" name="cansel" class="butMenu">       
     </div>`);
     }
     
@@ -36,17 +36,15 @@ function rendScrean (){
 
         switch(target.name){
             case 'shirt':     
-            alert(screen.querySelector(".shirtC").style.backgroundImage);           
-                screen.querySelector(".shirtC").style.backgroundImage = `url(${target.value})`;            
+                    
+                shirtC = screen.querySelector(".shirtC").style.backgroundImage = `url(${target.value})`;             
                 break;
             case 'woll':
                 backG = screen.querySelector(".backG").style.backgroundImage = `url(${target.value})`;
                 break;
             case 'confirm':
-                
-                
+                /*здесь будет присвоение с вариантом для выведенных карт через cssText*/               
                 document.querySelector("body").style.backgroundImage = backG;
-                alert(`url(${backG})`);
                 screen.style.display = "none";
                 break;
             case 'cansel':
@@ -57,3 +55,4 @@ function rendScrean (){
 }
 
 option.addEventListener("click", rendScrean);
+//замена рубашек должна быть через импорт переменной и cssTex

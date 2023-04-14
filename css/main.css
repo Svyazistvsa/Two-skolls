@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../jpg/wollpaper4.jpg);
+    background-image: url(../jpg/wollpaper1.jpg);
     background-size: cover;
     align-content: center;
 }
@@ -103,8 +103,8 @@ header {
 }
 
 .shirt {
-    transform: rotateY(0deg);
     background-image: url(../jpg/shirt0.jpg);
+    transform: rotateY(0deg);    
     background-size: cover;
 }
 
@@ -159,7 +159,7 @@ header {
     background-size: cover;
 }
 
-.menuBut {
+.butMenu {
     display: block;
     margin: 30px auto;
 }
