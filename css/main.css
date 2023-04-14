@@ -103,9 +103,20 @@ header {
 }
 
 .shirt {
-    background-image: url(../jpg/shirt0.jpg);
+    
     transform: rotateY(0deg);    
     background-size: cover;
+}
+.shirt0{
+    background-image: url(../jpg/shirt0.jpg);
+}
+
+.shirt1{
+    background-image: url(../jpg/shirt1.jpg);
+}
+
+.shirt2{
+    background-image: url(../jpg/shirt2.jpg);
 }
 
 .face {
@@ -143,7 +154,7 @@ header {
     width: 270px;
     height: 410px;    
     border: black 2px solid;
-    background-image: url(../jpg/shirt0.jpg);
+    /*background-image: url(../jpg/shirt0.jpg);*/
     background-size: cover;
 }
 

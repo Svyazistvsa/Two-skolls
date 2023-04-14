@@ -1,7 +1,7 @@
 "use strict"
 
 let option = document.querySelector("#options"),
-    shirtC, backG, screen;
+    shirtC, backG, screen, exShirt = "shirt0";
 
 
 function rendScrean (){
@@ -9,11 +9,11 @@ function rendScrean (){
         screen.style.display = "block";
     } else {
         document.body.insertAdjacentHTML('beforeend', `<div class="screen">
-        <div class="shirtC" ></div>
+        <div class="shirtC shirt0" ></div>
         <div class="shirtR" >
-            <input name="shirt" type="radio" value="jpg/shirt0.jpg" class="rad" checked></input>
-            <input name="shirt" type="radio" value="jpg/shirt1.jpg" class="rad"></input>
-            <input name="shirt" type="radio" value="jpg/shirt2.jpg" class="rad"></input>
+            <input name="shirt" type="radio" value="shirt0" class="rad" checked></input>
+            <input name="shirt" type="radio" value="shirt1" class="rad"></input>
+            <input name="shirt" type="radio" value="shirt2" class="rad"></input>
         </div>
         <div class="backG" ></div>
         <div class="backR" >
@@ -35,15 +35,24 @@ function rendScrean (){
         let target = e.target;
 
         switch(target.name){
-            case 'shirt':     
-                    
-                shirtC = screen.querySelector(".shirtC").style.backgroundImage = `url(${target.value})`;             
+            case 'shirt':                         
+                shirtC = target.value;
+                screen.querySelector(".shirtC").classList.remove(screen.querySelector(".shirtC").classList[1])
+                screen.querySelector(".shirtC").classList.add(shirtC);             
                 break;
             case 'woll':
                 backG = screen.querySelector(".backG").style.backgroundImage = `url(${target.value})`;
                 break;
             case 'confirm':
-                /*здесь будет присвоение с вариантом для выведенных карт через cssText*/               
+                if(document.querySelector(".shirt")){
+                    let arr = document.querySelectorAll(".shirt");
+                    
+                    for(let key = 0; key < arr.length; key++){                        
+                        arr[key].classList.remove(arr[key].classList[1]);
+                        arr[key].classList.add(shirtC);
+                    }
+                }
+                exShirt = shirtC;
                 document.querySelector("body").style.backgroundImage = backG;
                 screen.style.display = "none";
                 break;
@@ -56,3 +65,4 @@ function rendScrean (){
 
 option.addEventListener("click", rendScrean);
 //замена рубашек должна быть через импорт переменной и cssTex
+export{exShirt};

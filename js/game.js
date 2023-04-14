@@ -5,7 +5,7 @@ let game = document.querySelector('#game'),
     cells36 = document.querySelector('#cells36'),
     isThis, timerI, points;
 
-    
+import { exShirt } from "./options.js";
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -31,7 +31,7 @@ let jpgArr = [
 
 function render(area, column, originClass){
 
-    if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).remove();
+    if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
 
     let flipps = area.querySelectorAll('.flip');
     if(flipps.length != 0){
@@ -51,7 +51,8 @@ function render(area, column, originClass){
         div.classList.add('card');
 
         let shirt = document.createElement('div');
-        shirt.classList.add('shirt');
+        shirt.classList.add(`shirt`);
+        shirt.classList.add(`${exShirt}`);
 
         let face = document.createElement('div');
         face.classList.add('face');
@@ -159,7 +160,10 @@ function timer (time_limit, timerI){
             () =>{        
                 timeP = timeP += 1;
                 timeL = time_limit - timeP;
-                span.innerHTML = fTimeLeft(timeL);                
+                span.innerHTML = fTimeLeft(timeL);
+                if(document.querySelector('#titular').oncllick = () => {return true;}){
+                    return;
+                }
                 if(span.innerHTML == `0:00`) {                    
                     stopGame(span.innerHTML, timerI);
                     span.remove();
