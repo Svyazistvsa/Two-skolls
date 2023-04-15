@@ -126,12 +126,24 @@ header {
 }
 
 .timer {
+    /**/
+    width: 100%;      
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+}
+.timer span {
     display: block;
-    width: 100%;    
     text-align: center;
     font-size: 40pt;
     color: orange;
-    align-items: baseline;
+}
+
+.timer button{
+    background: red;
+    text-align: center;
+    font-size: 40pt;
+    color: orange;
 }
 
 .screen {
@@ -153,8 +165,7 @@ header {
 .shirtC {
     width: 270px;
     height: 410px;    
-    border: black 2px solid;
-    /*background-image: url(../jpg/shirt0.jpg);*/
+    border: black 2px solid;   
     background-size: cover;
 }
 
@@ -174,3 +185,4 @@ header {
     display: block;
     margin: 30px auto;
 }
+

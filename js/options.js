@@ -45,8 +45,7 @@ function rendScrean (){
                 break;
             case 'confirm':
                 if(document.querySelector(".shirt")){
-                    let arr = document.querySelectorAll(".shirt");
-                    
+                    let arr = document.querySelectorAll(".shirt");                    
                     for(let key = 0; key < arr.length; key++){                        
                         arr[key].classList.remove(arr[key].classList[1]);
                         arr[key].classList.add(shirtC);
@@ -64,5 +63,5 @@ function rendScrean (){
 }
 
 option.addEventListener("click", rendScrean);
-//замена рубашек должна быть через импорт переменной и cssTex
+
 export{exShirt};

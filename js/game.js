@@ -4,8 +4,9 @@ let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
     isThis, timerI, points;
-
+    
 import { exShirt } from "./options.js";
+import{rendTitl} from "./menu.js";
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -30,6 +31,14 @@ let jpgArr = [
 ]
 
 function render(area, column, originClass){
+    let timerBox = document.createElement("div"),        
+    stop = document.createElement("button");
+    stop.innerText = "СТОП";
+    game.after(timerBox);
+    timerBox.append(stop);
+    timerBox.classList.add("timer");
+
+
 
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
 
@@ -141,9 +150,9 @@ function getRandom(min, max) {
 }
 
 function timer (time_limit, timerI){
-    let timeP = 0, timeL,
+    let timeP = 0, timeL,                
         span = document.createElement("span");
-        span.classList.add("timer");
+        
         
     function fTimeLeft(time){
         const minutes = Math.floor(time / 60);
@@ -155,33 +164,47 @@ function timer (time_limit, timerI){
         return `${minutes}:${seconds}`;
     }
 
+    document.querySelector("Button").onclick = () => {
+        stopGame("00:00", timerI, "true")
+        rendTitl();
+        return;
+    }
+    document.querySelector('#titular').onclick = () => {
+        stopGame("00:00", timerI, "true")
+        rendTitl();
+        return;
+    }
+
     function startTimer(){
         timerI = setInterval(
             () =>{        
                 timeP = timeP += 1;
                 timeL = time_limit - timeP;
                 span.innerHTML = fTimeLeft(timeL);
-                if(document.querySelector('#titular').oncllick = () => {return true;}){
-                    return;
-                }
+                               
                 if(span.innerHTML == `0:00`) {                    
+                    
                     stopGame(span.innerHTML, timerI);
                     span.remove();
                 }
-                if(!game.querySelectorAll(".card").length){
+                if(!game.querySelectorAll(".card").length){                    
+                    
                     stopGame(span.innerHTML, timerI)
                     span.remove();
                 };
             }, 1000
         )
     }
-    game.after(span);
+    document.querySelector(".timer").append(span);
+    
     span.innerHTML =`${fTimeLeft(time_limit)}`;
-    startTimer()
+    startTimer();
+    
 }
 
-function stopGame(time, timerI){
-    clearInterval(timerI);    
+function stopGame(time, timerI, not){
+    clearInterval(timerI);
+    if(not) return;    
     let minSec, secSec, arr;
     arr = time.split(':');
     minSec = arr[0] * 60;
@@ -194,3 +217,4 @@ cells16.onclick = () => render(game, 4, "titular");
 cells36.onclick = () => render(game, 6, "titular");
 
 game.addEventListener("click", flipOver);
+

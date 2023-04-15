@@ -26,3 +26,4 @@ function rendTitl(){
 
     document.querySelector(".titular").style.display = "block";
 }
+export{rendTitl};
