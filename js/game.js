@@ -3,10 +3,11 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis, timerI, points;
+    isThis, timerI, points, timerBox;
     
 import { exShirt } from "./options.js";
 import{rendTitl} from "./menu.js";
+import {delFlip} from "./menu.js";
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -30,24 +31,22 @@ let jpgArr = [
     {img: "jpg/skulls18.jpg", be: false}
 ]
 
+
+
 function render(area, column, originClass){
-    let timerBox = document.createElement("div"),        
+    
+    if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
+    
+    stopGame("00:00", timerI, "true")
+    
+    delFlip(area);
+
+    timerBox = document.createElement("div"),        
     stop = document.createElement("button");
     stop.innerText = "СТОП";
     game.after(timerBox);
     timerBox.append(stop);
-    timerBox.classList.add("timer");
-
-
-
-    if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
-
-    let flipps = area.querySelectorAll('.flip');
-    if(flipps.length != 0){
-        for(let i=0; i<flipps.length; i++){
-            flipps[i].remove();            
-        }
-    }
+    timerBox.classList.add("timer");    
 
     area.style.gridTemplateColumns = `repeat(${column}, 1fr)`;
     
@@ -80,6 +79,7 @@ function render(area, column, originClass){
     faceAdd(jpgArr, cardArr, column);
         if(column == 4) timer(160, timerI);
         if(column == 6) timer(300, timerI);
+        
 }
 
 function faceAdd (jpgArr, cardArr, column){
@@ -150,6 +150,7 @@ function getRandom(min, max) {
 }
 
 function timer (time_limit, timerI){
+    
     let timeP = 0, timeL,                
         span = document.createElement("span");
         
@@ -159,8 +160,7 @@ function timer (time_limit, timerI){
         let seconds = time % 60;
         if (seconds < 10) {
             seconds = `0${seconds}`;            
-        }
-        
+        }        
         return `${minutes}:${seconds}`;
     }
 
@@ -174,6 +174,7 @@ function timer (time_limit, timerI){
         rendTitl();
         return;
     }
+    
 
     function startTimer(){
         timerI = setInterval(
@@ -181,36 +182,34 @@ function timer (time_limit, timerI){
                 timeP = timeP += 1;
                 timeL = time_limit - timeP;
                 span.innerHTML = fTimeLeft(timeL);
-                               
+                
                 if(span.innerHTML == `0:00`) {                    
-                    
-                    stopGame(span.innerHTML, timerI);
-                    span.remove();
+                    stopGame(span.innerHTML, timerI)                    
                 }
-                if(!game.querySelectorAll(".card").length){                    
-                    
-                    stopGame(span.innerHTML, timerI)
-                    span.remove();
+                if(!game.querySelectorAll(".card").length){   
+                    if(span.innerHTML == "0:00") return;                
+                    stopGame(span.innerHTML, timerI)                    
                 };
             }, 1000
         )
     }
-    document.querySelector(".timer").append(span);
-    
+    document.querySelector(".timer").append(span);    
     span.innerHTML =`${fTimeLeft(time_limit)}`;
-    startTimer();
-    
+    startTimer();    
 }
 
 function stopGame(time, timerI, not){
     clearInterval(timerI);
-    if(not) return;    
+    if(not) return;         
+    delFlip(game);
     let minSec, secSec, arr;
     arr = time.split(':');
     minSec = arr[0] * 60;
     secSec = arr[1];
     points = +minSec + secSec;
-    alert(points);
+    alert(points);        
+    game.style.gridTemplateColumns = `1fr`;
+    document.querySelector(".titular").style.display = "block";    
 }
 
 cells16.onclick = () => render(game, 4, "titular");
