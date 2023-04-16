@@ -1,7 +1,7 @@
 "use strict"
 
 let option = document.querySelector("#options"),
-    shirtC, backG, screen, exShirt = "shirt0";
+    shirtC = "shirt0", backG, screen, exShirt = "shirt0";
 
 
 function rendScrean (){

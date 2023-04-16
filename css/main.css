@@ -127,23 +127,25 @@ header {
 }
 
 .timer {
-    /**/
     width: 100%;      
     align-items: baseline;
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 .timer span {
     display: block;
     text-align: center;
     font-size: 40pt;
     color: orange;
+    text-shadow: red 2px -2px 5px;
 }
 
 .timer button{
-    background: red;
+    background: rgb(255, 238, 0);
     text-align: center;
     font-size: 40pt;
+    text-shadow: grey 2px -2px 10px;
     color: orange;
 }
 

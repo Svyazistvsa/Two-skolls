@@ -125,17 +125,17 @@ function flipOver(e){
                 setTimeout(() => {
                     isThis.parentNode.remove();
                     isThis = undefined;
-               }, 800);
+               }, 500);
                 setTimeout(() => {
                     target.parentNode.remove();                    
                     
-                }, 800);                
+                }, 500);                
             } else {
                 setTimeout(() => {
                     isThis.parentNode.classList.remove("over");
                     isThis = undefined;
-                }, 800);
-                setTimeout(() => target.parentNode.classList.remove("over"), 800);                
+                }, 500);
+                setTimeout(() => target.parentNode.classList.remove("over"), 500); 
             }            
         }
     }    
@@ -208,7 +208,7 @@ function stopGame(time, timerI, not){
     arr = time.split(':');
     minSec = arr[0] * 60;
     secSec = arr[1];
-    points = +minSec + secSec;
+    points = ((minSec + 1) + secSec) * 13;
     alert(points);        
     game.style.gridTemplateColumns = `1fr`;
     document.querySelector(".titular").style.display = "block";    
