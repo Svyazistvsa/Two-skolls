@@ -37,8 +37,6 @@ function render(area, column, originClass){
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
     
-    stopGame("00:00", timerI, "true")
-    
     delFlip(area);
 
     timerBox = document.createElement("div"),        
@@ -163,6 +161,10 @@ function timer (time_limit, timerI){
         }        
         return `${minutes}:${seconds}`;
     }
+    document.addEventListener("tbn", function(e){
+        stopGame("00:00", timerI, "true")
+        return;
+    })
 
     document.querySelector("Button").onclick = () => {
         stopGame("00:00", timerI, "true")
