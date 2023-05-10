@@ -6,8 +6,9 @@ let game = document.querySelector('#game'),
     isThis, timerI, points, timerBox;
     
 import { exShirt } from "./options.js";
-import{rendTitl} from "./menu.js";
-import {delFlip} from "./menu.js";
+import { rendTitl } from "./menu.js";
+import { delFlip } from "./menu.js";
+import { endGame } from "./end-game.js";
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},

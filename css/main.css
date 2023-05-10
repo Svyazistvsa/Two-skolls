@@ -173,7 +173,7 @@ header {
     background-size: cover;
 }
 
-.shirtR, .backR {
+.shirtR, .backR, .scrn {
     text-align: center; 
 }
 
@@ -190,3 +190,7 @@ header {
     margin: 30px auto;
 }
 
+.scrn{
+    width: 100%;
+    height: 100%;
+}
