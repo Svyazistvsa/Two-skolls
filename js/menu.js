@@ -35,5 +35,5 @@ function rendTitl(){
     }
 }
 
-export{rendTitl};
-export{delFlip};
+export { rendTitl };
+export { delFlip };

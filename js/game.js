@@ -210,7 +210,8 @@ function stopGame(time, timerI, not){
     minSec = arr[0] * 60;
     secSec = arr[1];
     points = ((minSec + 1) + secSec) * 13;
-    alert(points);        
+    //alert(points);      
+    endGame(points);
     game.style.gridTemplateColumns = `1fr`;
     document.querySelector(".titular").style.display = "block";    
 }
