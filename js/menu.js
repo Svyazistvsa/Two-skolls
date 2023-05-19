@@ -26,13 +26,13 @@ function delFlip (area){
     }
 }
 function rendTitl(){
+    if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
     if(document.querySelector('.flip')){        
         area.style.gridTemplateColumns = `1fr`;
         delFlip(area);       
-    if(document.querySelector(".titular")) document.querySelector(".titular").style.display = "none";
-
-    document.querySelector(".titular").style.display = "block";
+        alert(document.querySelector("#titular"));    
     }
+    document.querySelector(".titular").style.display = "block";
 }
 
 export { rendTitl };

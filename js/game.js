@@ -37,6 +37,7 @@ let jpgArr = [
 function render(area, column, originClass){
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
+    if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
     
     delFlip(area);
 
@@ -212,8 +213,9 @@ function stopGame(time, timerI, not){
     points = ((minSec + 1) + secSec) * 13;
     //alert(points);      
     endGame(points);
+    points = 0;
     game.style.gridTemplateColumns = `1fr`;
-    document.querySelector(".titular").style.display = "block";    
+    //document.querySelector(".titular").style.display = "block";    
 }
 
 cells16.onclick = () => render(game, 4, "titular");
