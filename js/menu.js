@@ -29,8 +29,7 @@ function rendTitl(){
     if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
     if(document.querySelector('.flip')){        
         area.style.gridTemplateColumns = `1fr`;
-        delFlip(area);       
-        alert(document.querySelector("#titular"));    
+        delFlip(area); 
     }
     document.querySelector(".titular").style.display = "block";
 }
