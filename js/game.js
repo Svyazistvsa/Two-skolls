@@ -210,7 +210,7 @@ function stopGame(time, timerI, not){
     arr = time.split(':');
     minSec = arr[0] * 60;
     secSec = arr[1];
-    points = ((minSec + 1) + secSec) * 13;
+    points = (+minSec + +secSec) * 13;
     //alert(points);      
     endGame(points);
     points = 0;

@@ -2,7 +2,6 @@
 import { delFlip } from "./menu.js";
 
 function endGame(points){
-    //delFlip();
     let exprSrc = document.createElement("div"),
         score = document.createElement("div"),
         endScr = document.createElement("div");
@@ -15,6 +14,11 @@ function endGame(points){
     endScr.append(exprSrc);
     exprSrc.append(score);
     game.append(endScr);
+alert(points);
+    
+    if(points == 0) exprSrc.style.backgroundImage = "url(jpg/gameover.jpg)";    
+    if(points <= 1000) exprSrc.style.backgroundImage = "url(jpg/maybe.jpg)";
+    if(points > 1000) exprSrc.style.backgroundImage = "url(jpg/winner.jpg)";
 }
 
 export { endGame };
