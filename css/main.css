@@ -141,7 +141,7 @@ header {
     text-shadow: red 2px -2px 5px;
 }
 
-.timer button{
+.timer button, .score {
     background: rgb(255, 238, 0);
     text-align: center;
     font-size: 40pt;
@@ -194,14 +194,21 @@ header {
 .scrn {
     width: 100%;
     height: 100%;
-    background-image: url(../jpg/menu2.jpg);
+    
 }
 
 .expr {
     height: 300px;
-    width: 90%;
-    
+    width: 90%;    
     background-size: cover;
-    border:1px solid black;
+    border:1px solid white;
+    border-radius: 20px;
     margin: 100px auto;
+}
+
+.score {
+    width: 200px;
+    margin: 260px auto;
+    border: 1px solid red;
+    border-radius: 20px;
 }

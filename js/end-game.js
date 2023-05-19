@@ -14,11 +14,10 @@ function endGame(points){
     endScr.append(exprSrc);
     exprSrc.append(score);
     game.append(endScr);
-alert(points);
     
     if(points == 0) exprSrc.style.backgroundImage = "url(jpg/gameover.jpg)";    
-    if(points <= 1000) exprSrc.style.backgroundImage = "url(jpg/maybe.jpg)";
-    if(points > 1000) exprSrc.style.backgroundImage = "url(jpg/winner.jpg)";
+    if(points <= 1500) exprSrc.style.backgroundImage = "url(jpg/maybe.jpg)";
+    if(points > 1500) exprSrc.style.backgroundImage = "url(jpg/winner.jpg)";
 }
 
 export { endGame };
