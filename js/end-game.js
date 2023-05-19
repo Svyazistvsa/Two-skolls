@@ -12,9 +12,9 @@ function endGame(points){
     score.innerHTML = points;
 
     let game = document.querySelector("#game");
-    endScr.append("exprSrc");
-    exprSrc.append("score");
-    game.append("endScr");
+    endScr.append(exprSrc);
+    exprSrc.append(score);
+    game.append(endScr);
 }
 
 export { endGame };
