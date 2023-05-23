@@ -1,3 +1,5 @@
+@import url(mobile.css) screen and (max-width: 420px);
+
 body {
     margin: 0;
     padding: 0;
@@ -28,9 +30,7 @@ header {
     align-self: flex-end;
 }
 
-#main_menu {
-    background: #f7abab;
-    border: solid 1px red;
+#main_menu {    
     height: 60px;
     z-index: 1;
 }
@@ -49,10 +49,12 @@ header {
 }
 
 .list > li {
-    margin: 10px auto;
+    margin: 10px auto;        
+}
+
+#main_menu, .list > li {
     background: #f7abab;
     border: solid 1px red;
-    
 }
 
 #game {            
@@ -107,6 +109,7 @@ header {
     transform: rotateY(0deg);    
     background-size: cover;
 }
+
 .shirt0{
     background-image: url(../jpg/shirt0.jpg);
 }
@@ -133,19 +136,20 @@ header {
     flex-direction: row;
     justify-content: center;
 }
+
 .timer span {
-    display: block;
-    text-align: center;
-    font-size: 40pt;
-    color: orange;
-    text-shadow: red 2px -2px 5px;
+    display: block;    
+    text-shadow: grey 2px -2px 5px;
 }
 
 .timer button, .score {
-    background: rgb(255, 238, 0);
-    text-align: center;
-    font-size: 40pt;
+    background: rgb(255, 238, 0);    
     text-shadow: grey 2px -2px 10px;
+}
+
+.timer button, .score, .timer span {
+    text-align: center;
+    font-size: 40pt;    
     color: orange;
 }
 
@@ -161,12 +165,12 @@ header {
     border: 3px solid black;
 }
 
-.shirtC, .shirtR, .backR, .backG{
+.score, .expr, .shirtC, .shirtR, .backR, .backG{
     margin: 10px auto;
+    border-radius: 20px;
 }
 
 .shirtC {
-    border-radius: 20px ;
     width: 270px;
     height: 410px;    
     border: black 2px solid;   
@@ -183,7 +187,6 @@ header {
     border: white 2px solid;
     background-image: url(../jpg/wollpaper1.jpg);
     background-size: cover;
-    border-radius: 20px;
 }
 
 .butMenu {
@@ -193,22 +196,19 @@ header {
 
 .scrn {
     width: 100%;
-    height: 100%;
-    
+    height: 100%;    
 }
 
 .expr {
     height: 300px;
     width: 90%;    
     background-size: cover;
-    border:1px solid white;
-    border-radius: 20px;
+    border: 1px solid white;
     margin: 100px auto;
 }
 
 .score {
     width: 200px;
     margin: 260px auto;
-    border: 1px solid red;
-    border-radius: 20px;
+    border: 1px solid red;    
 }

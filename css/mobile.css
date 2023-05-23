@@ -1,0 +1,52 @@
+header {
+    margin-bottom: 20px;
+    height: 50px;
+}
+
+#main_menu {
+    height: 30px;
+}
+
+.block {
+    top: 25px;
+    width: 50px;
+}
+
+.list > li {
+    margin: 5px auto;
+}
+
+#game{
+    height: 450px;
+}
+
+.c16 {
+    width: 50px;
+    height: 75px;
+}
+
+.c36 {
+    width: 40px;
+    height: 50px;
+}
+
+.timer button, .score, .timer span {
+    font-size: 20pt;
+}
+
+.screen {
+    
+    left: calc((100% - 420px)/2); 
+    top:7px;
+    width: 420px;
+    height: 930px;
+}
+
+.expr {
+    height: 300px;
+    width: 90%;    
+    background-size: cover;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin: 50px auto;
+}
