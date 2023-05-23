@@ -1,4 +1,4 @@
-@import url(mobile.css);
+/*@import url(mobile.css);*/
 
 body {
     margin: 0;
@@ -59,6 +59,7 @@ header {
 
 #game {            
     height: 750px;
+    width: 100%;
     display: grid;
     justify-items: center;
     row-gap: 0;   
@@ -211,4 +212,59 @@ header {
     width: 200px;
     margin: 260px auto;
     border: 1px solid red;    
+}
+
+@media (max-width: 420px){
+
+    header {
+        margin-bottom: 20px;
+        height: 50px;
+    }
+
+    #main_menu {
+        height: 40px;
+    }
+
+    .block {
+        top: 25px;
+        width: 70px;
+    }
+
+    .list > li {
+        margin: 5px auto;
+    }
+
+    #container {             
+        height: 0%;
+        min-width: 300px;
+        margin:0 auto;
+    }
+
+    #game{
+        max-height: 100%;
+    }
+
+    .c16 {
+        width: 80px;
+        height: 110px;
+    }
+
+    .timer button, .score, .timer span {
+        font-size: 20pt;
+    }
+
+    .screen {    
+        left: calc((100% - 420px)/2); 
+        top:7px;
+        width: 420px;
+        height: 930px;
+    }
+
+    .expr {
+        height: 300px;
+        width: 90%;    
+        background-size: cover;
+        border: 1px solid white;
+        margin: 50px auto;
+    }
 }
