@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>two skulls</title>
-    
+    <title>two skulls</title>    
     <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-    
+<body>    
     <div id="container">
-        <header>
+        <header>            
             <input type="button" value="menu" id="main_menu">
             <ul class="list">
+                <li id="titular">титульный лист</li>
                 <li id="cells16">16 ячеек</li>
                 <li id="cells36">36 ячеек</li>
-            </ul>
-            <script src="js/menu.js"></script>        
+                <li id="options">опции</li>
+            </ul>                        
             <h1>two skulls</h1>
             <a id="copyright">&#169 by Svyazist</a>
         </header>
@@ -25,9 +24,11 @@
             <div class="titular">
                 <h2>Открой парные черепа</h2>
             </div>
-            <script src="js/game.js"></script>
+            <script src="js/game.js" type="module"></script>
         </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="js/menu.js" type="module"></script>
+    <script src="js/options.js" type="module"></script>
+    <script src="js/main.js" ></script>    
 </body>
 </html>
