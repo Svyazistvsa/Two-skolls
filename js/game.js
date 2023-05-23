@@ -3,7 +3,7 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis, timerI, points, timerBox;
+    isThis, timerI, points, timerBox, colum;
     
 import { exShirt } from "./options.js";
 import { rendTitl } from "./menu.js";
@@ -77,8 +77,14 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     faceAdd(jpgArr, cardArr, column);
-        if(column == 4) timer(160, timerI);
-        if(column == 6) timer(300, timerI);
+        if(column == 4) {
+            timer(160, timerI);
+            colum = 4;
+        }
+        if(column == 6) {
+            timer(300, timerI);
+            colum = 6;
+        }
         
 }
 
@@ -211,11 +217,9 @@ function stopGame(time, timerI, not){
     minSec = arr[0] * 60;
     secSec = arr[1];
     points = (+minSec + +secSec) * 13;
-    //alert(points);      
-    endGame(points);
+    endGame(points, colum);
     points = 0;
-    game.style.gridTemplateColumns = `1fr`;
-    //document.querySelector(".titular").style.display = "block";    
+    game.style.gridTemplateColumns = `1fr`;   
 }
 
 cells16.onclick = () => render(game, 4, "titular");
