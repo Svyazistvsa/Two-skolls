@@ -87,8 +87,9 @@ header {
     height: 150px;
 }
  
-#cells36 {
-  display: none;
+.c36 {
+  Width: 50px;
+  height: 80px;
 }
 
 .shirt, .face{    
@@ -218,22 +219,8 @@ header {
     margin: 50px auto;
 }
 
-@media (min-width: 421px) and (max-width: 430px) {
-  body{display:none} 
-  html:before{
-    content:'Переверните устройство в портретный режим или откройте сайт с компьютера.';
-      position:fixed;
-      top:0;
-      left:0;
-      right:0;
-      bottom:0;
-      margin:auto;
-      background:#fff;
-      z-index:999;
-      text-align:center;
-      width:180px;
-      height:80px;
-  } 
+@media (min-width: 421px) and (max-width: 700px) {
+  
 }
 
 
@@ -244,7 +231,7 @@ header {
     }
 
     header {
-        margin-bottom: 20px;
+        margin: 0;
         height: 50px;
     }
 
@@ -288,10 +275,9 @@ header {
         width: 10vh;
         height: 14vh;
     }
-    
-    .c36 {
-        width: 40pt;
-        height: 60pt;
+
+    #cells36 {
+      display: none;
     }
 
     .timer button, .score, .timer span {
