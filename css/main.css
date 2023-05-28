@@ -89,9 +89,8 @@ header {
     height: 150px;
 }
 
-.c36 {
-    width: 75px;
-    height: 100px;
+#cells36 {
+  display: none;
 }
 
 .shirt, .face{    
