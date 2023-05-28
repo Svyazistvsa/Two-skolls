@@ -9,7 +9,7 @@ function endGame(points, column){
     endScr.classList.add("scrn");
     exprSrc.classList.add("expr");
     score.classList.add("score");
-    phrase.classList.add("score");
+    phrase.classList.add("phrase");
     score.innerHTML = points;
 
     let game = document.querySelector("#game");
