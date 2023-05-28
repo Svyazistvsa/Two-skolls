@@ -218,7 +218,7 @@ header {
     margin: 50px auto;
 }
 
-@media (min-width: 421px) {
+@media (min-width: 421px) and (max-width: 430px) {
   body{display:none} 
   html:before{
     content:'Переверните устройство в портретный режим или откройте сайт с компьютера.';
