@@ -5,7 +5,7 @@ let full = document.querySelector("#full"),
 full.addEventListener("click", () => thatFull(container));
 
 function thatFull(nd){
-  if(container.fullscreenElement){
+  if (container.fullscreenEnabled){
     container.exitFullscreen();
   } else {
     container.requestFullscreen();
