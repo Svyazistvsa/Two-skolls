@@ -8,6 +8,8 @@ body {
     background-image: url(../jpg/wollpaper1.jpg);
     background-size: cover;
     align-content: center;
+    height: 100vh;
+    height: calc(var(--vh) * 100);
 }
 
 #container {
@@ -15,6 +17,7 @@ body {
     flex-direction: column;
     max-width: 900px;
     min-width: 700px;
+    
     margin:0 auto; 
 }
 
