@@ -6,8 +6,8 @@ full.addEventListener("click", () => thatFull(container));
 
 function thatFull(nd){
   if (container.fullscreenEnabled){
-    container.exitFullscreen();
+    document.body.exitFullscreen(document.body.container);
   } else {
-    container.requestFullscreen();
+    document.body.requestFullscreen(document.body.container);
   }
 }
