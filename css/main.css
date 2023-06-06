@@ -16,7 +16,6 @@ body {
     flex-direction: column;
     max-width: 900px;
     min-width: 700px;
-    
     margin:0 auto; 
 }
 
@@ -61,8 +60,8 @@ header {
 }
 
 #main_menu, .list > li {
-    background: #f7abab;
-    border: solid 1px red;
+    background: white;
+    border: solid 1px black;
 }
 
 #game {            
@@ -151,16 +150,16 @@ header {
     text-shadow: grey 2px -2px 5px;
 }
 
-.timer button, .score, .phrase {
-    background: rgb(255, 238, 0);    
+.timer button, .score, .phrase, .restart{
+    background: white;    
     text-shadow: grey 2px -2px 10px;
 }
 
-.timer button, .score, .timer span, .phrase {
+.timer button, .score, .timer span, .phrase, .restart{
     text-align: center;
     font-size: 40pt;    
-    color: orange;
-}
+    color: black;
+  }
 
 .screen {
     position: absolute;
@@ -174,7 +173,7 @@ header {
     border: 3px solid black;
 }
 
-.score, .expr, .shirtC, .shirtR, .backR, .backG, .phrase {
+.score, .expr, .shirtC, .shirtR, .backR, .backG, .phrase, .restart{
     margin: 10px auto;
     border-radius: 20px;
 }
@@ -216,9 +215,9 @@ header {
     margin: 100px auto;
 }
 
-.score, .phrase {
+.score, .phrase, .restart {
     width: 250px;
-    border: 1px solid red;
+    border: 1px solid black;
 }
 
 .score {    
@@ -227,6 +226,12 @@ header {
 
 .phrase{
     margin: 50px auto;
+}
+
+.restart{
+    margin: -30px auto 30px;
+    font-size: 25pt;
+    max-height: 50px;
 }
 
 @media (max-width: 420px){

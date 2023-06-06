@@ -5,19 +5,23 @@ function endGame(points, column){
     let exprSrc = document.createElement("div"),
         score = document.createElement("div"),
         endScr = document.createElement("div"),
-        phrase = document.createElement("div");
+        phrase = document.createElement("div"), 
+        input = document.createElement("input");
     endScr.classList.add("scrn");
     exprSrc.classList.add("expr");
     score.classList.add("score");
     phrase.classList.add("phrase");
+    input.classList.add("restart");
     score.innerHTML = points;
+    input.type = "button";
+    input.value = "заново";
 
     let game = document.querySelector("#game");
     endScr.append(exprSrc);
     exprSrc.append(score);
     game.append(endScr);
     endScr.append(phrase);
-    
+    game.append(input);
     if(column == 4) {
         if(points == 0) {
         exprSrc.style.backgroundImage = "url(jpg/gameover.jpg)";
