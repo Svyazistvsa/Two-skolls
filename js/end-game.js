@@ -25,7 +25,7 @@ function endGame(points, column){
     exprSrc.append(score);
     game.append(endScr);
     endScr.append(phrase);
-    game.append(input);
+   endScr.append(input);
     
     clmn = column;
     
@@ -56,12 +56,12 @@ function endGame(points, column){
                 phrase.innerHTML = "WINNER";
             }
     }
+document.body.querySelector(".restart").addEventListener("click", restartGame);
 }
-
 function restartGame (){
   render(game, clmn, "scrn");
 }
 
-document.body.querySelector(".restart").addEventListener("click", restartGame);
+
 
 export { endGame };

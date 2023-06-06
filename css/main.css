@@ -11,6 +11,10 @@ body {
     
 }
 
+#full {
+  display: none;
+}
+
 #container {
     display: flex;
     flex-direction: column;
@@ -120,14 +124,17 @@ header {
 
 .shirt0{
     background-image: url(../jpg/shirt0.jpg);
+    border-color: black;
 }
 
 .shirt1{
     background-image: url(../jpg/shirt1.jpg);
+    border-color: white;
 }
 
 .shirt2{
     background-image: url(../jpg/shirt2.jpg);
+    border-color: black;
 }
 
 .face {
@@ -150,12 +157,12 @@ header {
     text-shadow: grey 2px -2px 5px;
 }
 
-.timer button, .score, .phrase, .restart{
+.timer button, .score, .phrase, .restart, #full{
     background: white;    
     text-shadow: grey 2px -2px 10px;
 }
 
-.timer button, .score, .timer span, .phrase, .restart{
+.timer button, .score, .timer span, .phrase, .restart, #full {
     text-align: center;
     font-size: 40pt;    
     color: black;
@@ -239,6 +246,17 @@ header {
         display: block;
         min-height: 100vh;
         min-height: calc(var(--vh) * 100);
+    }
+    
+    #full {
+        font-size: 10pt;
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-radius: 50px;
+        position: absolute;
+        top: 1vh;
+        right: 3vh;
     }
 
     header {

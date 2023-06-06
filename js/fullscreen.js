@@ -1,6 +1,5 @@
 "use strict"
-let full = document.querySelector("#full"), 
-    container = document.querySelector("#container");
+let full = document.querySelector("#full");
     
 full.addEventListener("click", thatFull);
 
