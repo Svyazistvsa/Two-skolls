@@ -1,5 +1,10 @@
 "use strict"
 
+import { render } from "./game.js";
+
+let clmn, 
+    game = document.querySelector("#game"); 
+
 function endGame(points, column){
     
     let exprSrc = document.createElement("div"),
@@ -16,12 +21,14 @@ function endGame(points, column){
     input.type = "button";
     input.value = "заново";
 
-    let game = document.querySelector("#game");
     endScr.append(exprSrc);
     exprSrc.append(score);
     game.append(endScr);
     endScr.append(phrase);
     game.append(input);
+    
+    clmn = column;
+    
     if(column == 4) {
         if(points == 0) {
         exprSrc.style.backgroundImage = "url(jpg/gameover.jpg)";
@@ -50,5 +57,11 @@ function endGame(points, column){
             }
     }
 }
+
+function restartGame (){
+  render(game, clmn, "scrn");
+}
+
+document.body.querySelector(".restart").addEventListener("click", restartGame);
 
 export { endGame };

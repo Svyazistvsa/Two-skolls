@@ -227,3 +227,4 @@ cells36.onclick = () => render(game, 6, "titular");
 
 game.addEventListener("click", flipOver);
 
+export {render};
