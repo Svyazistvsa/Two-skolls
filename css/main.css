@@ -241,6 +241,31 @@ header {
     max-height: 50px;
 }
 
+#load{
+    position: absolute;
+    background: rgba(255,255,255, 0.5);
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    z-index: 1000;
+}
+
+.none{
+  display: none;
+}
+
+#load > img {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    border-radius: 20%;
+    margin: 40vh calc(100% / 2 - 50px) auto calc(100% / 2 - 50px);
+}
+
+#load > span {
+    margin: 0px calc(100% / 2 - 50px) auto calc(100% / 2 - 50px);
+}
+
 @media (max-width: 420px){
     body {
         display: block;
