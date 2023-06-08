@@ -70,7 +70,7 @@ header {
 }
 
 #main_menu, #full, .list, .list > Li, .timer button {
-  box-shadow: black 2px -2px 3px;
+  box-shadow: gray 2px 1px 7px;
 }
 
 #game {            
@@ -112,7 +112,7 @@ header {
 
 .shirt, .face{    
     border-radius: 10px;
-    box-shadow: gray 2px -2px 7px;
+    box-shadow: gray 2px 2px 7px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -160,7 +160,7 @@ header {
 
 .timer button, .score, .phrase, .restart, #full, #main_menu {
     background: white;    
-    text-shadow: grey 2px -2px 4px;
+    text-shadow: grey 2px 2px 1px;
 }
 
 .timer button, .score, .timer span, .phrase, .restart, #full {
@@ -173,9 +173,9 @@ header {
   border-radius: 20px;
 }
   
-.timer span {
+.timer span, header > h1, #copyright{
     display: block;    
-    text-shadow: red 2px -2px 5px;
+    text-shadow: red 2px 2px 7px;
     color: yellow;
 }
 
