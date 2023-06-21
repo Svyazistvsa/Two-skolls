@@ -4,9 +4,7 @@ let menu = document.querySelector('#main_menu'),
     list = document.querySelector('.list'),
     area = document.querySelector('#game'),
     titular = document.querySelector('#titular');
-
- 
-
+    
 menu.onclick = () => list.classList.toggle('block');
 
 titular.addEventListener("click", rendTitl)
@@ -27,7 +25,7 @@ function delFlip (area){
 }
 function rendTitl(){
     if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
-    if(document.querySelector('.flip')){        
+    if(document.querySelector('.flip')){
         area.style.gridTemplateColumns = `1fr`;
         delFlip(area); 
     }
