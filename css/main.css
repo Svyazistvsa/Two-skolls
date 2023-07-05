@@ -305,7 +305,7 @@ header {
     }
 }
 
-@media (min-width: 320px){
+@media (max-width: 699px) and (min-width: 320px){
     body {
         display: block;
         min-height: 100vh;
