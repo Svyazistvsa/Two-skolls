@@ -275,7 +275,7 @@ header {
 }
 
 .none{
-  display: none;
+    display: none;
 }
 
 #load > img {
@@ -288,6 +288,10 @@ header {
 
 #load > span {
     margin: 0px calc(100% / 2 - 50px) auto calc(100% / 2 - 50px);
+}
+
+.startButton {
+    background-color: green;
 }
 
 @media (max-height: 420px) {
