@@ -3,22 +3,21 @@
 import {render} from "./game.js";
 
 let startButton = document.querySelector(".startButton"),
-    form = document.forms.variant,
-    variantCells = form.elements.cells,
-    cells;
+    form = document.forms.variant;
 
-    for(let x=0; x<variantCells.lenght; x+1){
-        if(variantCells[x].checked) cells=variantCells[x].value;
-        alert(cells);
-    }
+    
 
     startButton.addEventListener("click", quickStart);
 
     function quickStart(){
-        render(game, cells+0, "titular");    
+        let cell,
+            variantCells = form.elements.cells;
+            alert(variantCells.lenght);
+        for(let x=0; x<variantCells.lenght; x+1){
+          //  alert(x);
+            if(variantCells[x].checked) cell=variantCells[x].value;
+        }
+        //alert(cell);
+        render(game, cell, "titular");    
         
     }
-
-    
-
-    
