@@ -12,7 +12,7 @@ let startButton = document.querySelector(".startButton"),
     function quickStart(){
         let cell,
             variantCells = form.elements.cells;
-            alert(variantCells.lenght);
+            alert(variantCells);
         for(let x=0; x<variantCells.lenght; x+1){
           //  alert(x);
             if(variantCells[x].checked) cell=variantCells[x].value;
