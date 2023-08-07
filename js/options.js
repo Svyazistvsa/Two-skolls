@@ -22,7 +22,7 @@ function rendScrean (){
             <input name="woll" type="radio" value="jpg/wollpaper3.jpg" class="rad"></input>
         </div>
         <input type="button" value="Принять" name="confirm" class="butMenu"> 
-        <input type="button" value="Отбой" name="cansel" class="butMenu">       
+        <input type="button" value="Отбой" name="cansel" class="butMenu">   
     </div>`);
     }
     

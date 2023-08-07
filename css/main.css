@@ -186,7 +186,7 @@ header {
   border-radius: 20px;
 }
   
-.timer span, header > h1, #copyright{
+.timer span, header > h1, #copyright, #banner span{
     display: block;    
     text-shadow: red 2px 2px 7px;
     color: yellow;
@@ -316,10 +316,12 @@ header {
         display: block;
         Width: 300px;
         height: 100px;
-        background: red;
         left: 33%;
         top: 30%;
         position: absolute;
+        box-shadow:  red 0 0 7px;
+        border-radius: 20px;
+        background-color: rgba(230, 217, 206, 0.8);
       }
 }
 
