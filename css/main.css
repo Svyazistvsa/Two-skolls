@@ -5,7 +5,7 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background-image: url(../jpg/wollpaper1.jpg);
+    background-image: url(../jpg/wollpaper10.jpg);
     background-size: cover;
     align-content: center;
     height: 100vh;
@@ -296,10 +296,10 @@ header {
 
 @media (max-height: 420px) {
     body {
-     /* position: fixed;*/
      height: 100vh;
      overflow-y: hidden;
     }
+    
     #banner {
       display: block;
       background: rgba(255, 255, 255, 0.2);
@@ -328,7 +328,8 @@ header {
         display: block;
         min-height: 100vh;
         min-height: calc(var(--vh) * 100);
-        background-size: auto 100%;
+        background-position: center;
+        background-size: cover;
     }
     
     #full {

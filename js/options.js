@@ -17,7 +17,7 @@ function rendScrean (){
         </div>
         <div class="backG" ></div>
         <div class="backR" >
-            <input name="woll" type="radio" value="jpg/wollpaper1.jpg" class="rad" checked></input>
+            <input name="woll" type="radio" value="jpg/wollpaper10.jpg" class="rad" checked></input>
             <input name="woll" type="radio" value="jpg/wollpaper2.jpg" class="rad"></input>
             <input name="woll" type="radio" value="jpg/wollpaper3.jpg" class="rad"></input>
         </div>
