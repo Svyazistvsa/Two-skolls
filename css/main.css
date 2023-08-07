@@ -292,7 +292,6 @@ header {
 
 .startButton {
     background-image: url(../jpg/wollpaper10.jpg);
-    display: block;
     width: 200px;
     height: 200px;
 }
@@ -391,9 +390,8 @@ header {
     
     .startButton {
         
-        display: block;
-        width: 50px;
-        height: 50px;
+        width: 150px;
+        height: 150px;
     }
     
    .titular input {
