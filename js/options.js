@@ -33,9 +33,8 @@ function rendScrean (){
 
     function clickOpt(e){
         let target = e.target;
-
         switch(target.name){
-            case 'shirt':                         
+            case 'shirt':               
                 shirtC = target.value;
                 screen.querySelector(".shirtC").classList.remove(screen.querySelector(".shirtC").classList[1])
                 screen.querySelector(".shirtC").classList.add(shirtC);             
@@ -45,8 +44,8 @@ function rendScrean (){
                 break;
             case 'confirm':
                 if(document.querySelector(".shirt")){
-                    let arr = document.querySelectorAll(".shirt");                    
-                    for(let key = 0; key < arr.length; key++){                        
+                    let arr = document.querySelectorAll(".shirt");
+                    for(let key = 0; key < arr.length; key++){ 
                         arr[key].classList.remove(arr[key].classList[1]);
                         arr[key].classList.add(shirtC);
                     }
