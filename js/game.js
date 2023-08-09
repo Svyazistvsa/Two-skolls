@@ -76,6 +76,7 @@ function render(area, column, originClass){
     }
 
     let cardArr = area.querySelectorAll(".face");
+    
     faceAdd(jpgArr, cardArr, column);
         if(column == 4) {
             timer(160, timerI);
@@ -88,7 +89,8 @@ function render(area, column, originClass){
         
 }
 
-function faceAdd (jpgArr, cardArr, column){
+
+async function faceAdd (jpgArr, cardArr, column){
     let dub = 0, oimg, jArr, cArr = Array.from(cardArr);     
     for(let i = 0; i < (column*column); ++i){
         
@@ -107,7 +109,7 @@ function faceAdd (jpgArr, cardArr, column){
             rand = 0;
         } 
 
-        cArr[rand].style.backgroundImage = `url(${oimg.img})`;                
+        await new Promise((resolve, reject) => cArr[rand].style.backgroundImage = `url(${oimg.img})`;)            
         cArr.splice(rand, 1);
         if(cArr.length == 0){            
             for(let i=0; i < jpgArr.length; i++){
