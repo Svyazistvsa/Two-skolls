@@ -63,4 +63,4 @@ function rendScrean (){
 
 option.addEventListener("click", rendScrean);
 
-export{exShirt};
+export {exShirt};

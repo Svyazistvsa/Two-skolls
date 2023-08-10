@@ -90,7 +90,7 @@ function render(area, column, originClass){
 }
 
 
-async function faceAdd (jpgArr, cardArr, column){
+ function faceAdd (jpgArr, cardArr, column){
     let dub = 0, oimg, jArr, cArr = Array.from(cardArr);     
     for(let i = 0; i < (column*column); ++i){
         
@@ -109,7 +109,8 @@ async function faceAdd (jpgArr, cardArr, column){
             rand = 0;
         } 
 
-        await new Promise((resolve, reject) => cArr[rand].style.backgroundImage = `url(${oimg.img})`;)            
+        cArr[rand].style.backgroundImage = `url(${oimg.img})`; 
+        
         cArr.splice(rand, 1);
         if(cArr.length == 0){            
             for(let i=0; i < jpgArr.length; i++){
