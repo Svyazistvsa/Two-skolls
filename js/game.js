@@ -36,6 +36,7 @@ let jpgArr = [
 
 function render(area, column, originClass){
     document.querySelector("#load").classList.remove("none");
+
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
     if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
@@ -78,10 +79,8 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     
-    /*let promise = */new Promise(function(resolve, reject){
+    
         faceAdd(jpgArr, cardArr, column);
-    }).then(
-        document.querySelector("#load").classList.add("none"));
     
         if(column == 4) {
             timer(160, timerI);
@@ -98,7 +97,7 @@ function render(area, column, originClass){
  function faceAdd (jpgArr, cardArr, column){
     let dub = 0, oimg, jArr, cArr = Array.from(cardArr);     
     for(let i = 0; i < (column*column); ++i){
-        
+        let img;
         if(dub == 0){            
             if(oimg) {
                 jpgArr.find(item => item.img == oimg.img).be = true;                
@@ -112,9 +111,25 @@ function render(area, column, originClass){
             rand = getRandom(0, (cArr.length-1));
         } else if(cArr.length == 1){
             rand = 0;
-        } 
+        }        
 
-        cArr[rand].style.backgroundImage = `url(${oimg.img})`; 
+        let promise = new Promise(function(resolve,reject){
+            img = document.createElement("img");
+            img.src = `${oimg.img}`;
+            cArr[rand].style.backgroundImage = `url(${oimg.img})`;
+            resolve("done");
+            //cArr[rand].append(img);
+            
+            //img.addEventListener('load',(rand) => {
+            //    cArr[rand].style.backgroundImage = `url(${oimg.img})`;
+            //});
+        })
+
+        promise.then(function(done){
+            if(done == "done")document.querySelector("#load").classList.add("none");
+        })
+
+        
         
         cArr.splice(rand, 1);
         if(cArr.length == 0){            
