@@ -35,6 +35,7 @@ let jpgArr = [
 
 
 function render(area, column, originClass){
+    document.querySelector("#load").classList.remove("none");
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
     if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
@@ -77,7 +78,11 @@ function render(area, column, originClass){
 
     let cardArr = area.querySelectorAll(".face");
     
-    faceAdd(jpgArr, cardArr, column);
+    /*let promise = */new Promise(function(resolve, reject){
+        faceAdd(jpgArr, cardArr, column);
+    }).then(
+        document.querySelector("#load").classList.add("none"));
+    
         if(column == 4) {
             timer(160, timerI);
             colum = 4;
