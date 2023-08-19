@@ -35,7 +35,7 @@ let jpgArr = [
 
 
 function render(area, column, originClass){
-    document.querySelector("#load").classList.remove("none");
+    //document.querySelector("#load").classList.remove("none");
 
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
@@ -113,21 +113,9 @@ function render(area, column, originClass){
             rand = 0;
         }        
 
-        let promise = new Promise(function(resolve,reject){
-            img = document.createElement("img");
-            img.src = `${oimg.img}`;
-            cArr[rand].style.backgroundImage = `url(${oimg.img})`;
-            resolve("done");
-            //cArr[rand].append(img);
-            
-            //img.addEventListener('load',(rand) => {
-            //    cArr[rand].style.backgroundImage = `url(${oimg.img})`;
-            //});
-        })
+        cArr[rand].style.backgroundImage = `url(${oimg.img})`; 
 
-        promise.then(function(done){
-            if(done == "done")document.querySelector("#load").classList.add("none");
-        })
+        
 
         
         
