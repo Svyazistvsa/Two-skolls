@@ -35,7 +35,7 @@ let jpgArr = [
 
 
 function render(area, column, originClass){
-    //document.querySelector("#load").classList.remove("none");
+    document.querySelector("#load").classList.remove("none");
 
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
@@ -95,7 +95,7 @@ function render(area, column, originClass){
 
 
  function faceAdd (jpgArr, cardArr, column){
-    let dub = 0, oimg, jArr, cArr = Array.from(cardArr);     
+    let dub = 0, oimg, jArr, cArr = Array.from(cardArr), loadArr = [], timerLoad;     
     for(let i = 0; i < (column*column); ++i){
         let img;
         if(dub == 0){            
@@ -105,6 +105,7 @@ function render(area, column, originClass){
             jArr = jpgArr.filter(item => item.be == false);
             oimg = jArr[getRandom(0, (jArr.length-1))];                        
             dub = 2; 
+            loadArr.push(oimg.img);
         }
         let rand;
         if(cArr.length != 1){
@@ -113,11 +114,7 @@ function render(area, column, originClass){
             rand = 0;
         }        
 
-        cArr[rand].style.backgroundImage = `url(${oimg.img})`; 
-
-        
-
-        
+        cArr[rand].style.backgroundImage = `url(${oimg.img})`;
         
         cArr.splice(rand, 1);
         if(cArr.length == 0){            
@@ -127,6 +124,19 @@ function render(area, column, originClass){
         }        
         dub -= 1;
     }
+    timerLoad = setInterval(() =>{
+        let score = 0;
+        for(let i = 0; i < loadArr.length;i++){
+            if(!loadArr[i].complete) score++;
+        }
+        if(!score){
+            alert(score);
+            document.querySelector("#load").classList.add("none");
+            clearInterval(timerLoad);
+        } 
+        alert(score);
+        score = 0;
+    }, 50)
 }
 
 function flipOver(e){
