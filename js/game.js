@@ -80,10 +80,7 @@ function render(area, column, originClass){
     let cardArr = area.querySelectorAll(".face");
     
     
-    faceAdd(jpgArr, cardArr, column);
-
-    if(area.readyState == "complete") document.querySelector("#load").classList.add("none");
-      
+    faceAdd(jpgArr, cardArr, column);      
 
     if(column == 4) {
         timer(160, timerI);
