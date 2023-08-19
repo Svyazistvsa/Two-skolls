@@ -35,7 +35,6 @@ let jpgArr = [
 
 
 function render(area, column, originClass){
-    document.querySelector("#load").classList.remove("none");
 
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
@@ -115,7 +114,6 @@ function render(area, column, originClass){
         }        
 
         cArr[rand].style.backgroundImage = `url(${oimg.img})`;
-        //loadArr.push(document.createElement("img").src = `${oimg.img}`);
         
         cArr.splice(rand, 1);
         if(cArr.length == 0){            
@@ -125,20 +123,7 @@ function render(area, column, originClass){
         }        
         dub -= 1;
     }
-    //timerLoad = setInterval(() =>{
-    //    let score = 0;
-    //    for(let i = 0; i < loadArr.length;i++){
-    //        if(!loadArr[i].complete) score++;
-    //        alert(loadArr[i].complete);
-    //    }
-    //    if(!score){
-    //        
-    //        document.querySelector("#load").classList.add("none");
-    //        clearInterval(timerLoad);
-    //    } 
-    //    
-    //    score = 0;
-    //}, 50)
+    
 }
 
 function flipOver(e){
@@ -251,3 +236,4 @@ cells36.onclick = () => render(game, 6, "titular");
 game.addEventListener("click", flipOver);
 
 export {render};
+export {jpgArr};
