@@ -80,16 +80,19 @@ function render(area, column, originClass){
     let cardArr = area.querySelectorAll(".face");
     
     
-        faceAdd(jpgArr, cardArr, column);
-    
-        if(column == 4) {
-            timer(160, timerI);
-            colum = 4;
-        }
-        if(column == 6) {
-            timer(300, timerI);
-            colum = 6;
-        }
+    faceAdd(jpgArr, cardArr, column);
+
+    if(area.readyState == "complete") document.querySelector("#load").classList.add("none");
+      
+
+    if(column == 4) {
+        timer(160, timerI);
+        colum = 4;
+    }
+    if(column == 6) {
+        timer(300, timerI);
+        colum = 6;
+    }
         
 }
 
@@ -105,7 +108,7 @@ function render(area, column, originClass){
             jArr = jpgArr.filter(item => item.be == false);
             oimg = jArr[getRandom(0, (jArr.length-1))];                        
             dub = 2; 
-            loadArr.push(oimg.img);
+            
         }
         let rand;
         if(cArr.length != 1){
@@ -115,6 +118,7 @@ function render(area, column, originClass){
         }        
 
         cArr[rand].style.backgroundImage = `url(${oimg.img})`;
+        //loadArr.push(document.createElement("img").src = `${oimg.img}`);
         
         cArr.splice(rand, 1);
         if(cArr.length == 0){            
@@ -124,19 +128,20 @@ function render(area, column, originClass){
         }        
         dub -= 1;
     }
-    timerLoad = setInterval(() =>{
-        let score = 0;
-        for(let i = 0; i < loadArr.length;i++){
-            if(!loadArr[i].complete) score++;
-        }
-        if(!score){
-            alert(score);
-            document.querySelector("#load").classList.add("none");
-            clearInterval(timerLoad);
-        } 
-        alert(score);
-        score = 0;
-    }, 50)
+    //timerLoad = setInterval(() =>{
+    //    let score = 0;
+    //    for(let i = 0; i < loadArr.length;i++){
+    //        if(!loadArr[i].complete) score++;
+    //        alert(loadArr[i].complete);
+    //    }
+    //    if(!score){
+    //        
+    //        document.querySelector("#load").classList.add("none");
+    //        clearInterval(timerLoad);
+    //    } 
+    //    
+    //    score = 0;
+    //}, 50)
 }
 
 function flipOver(e){
