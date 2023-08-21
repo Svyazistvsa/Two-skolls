@@ -186,7 +186,7 @@ header {
   border-radius: 20px;
 }
   
-.timer span, header > h1, #copyright, #banner span{
+.timer span, header > h1, #copyright, #banner span, .startButton{
     display: block;    
     text-shadow: red 2px 2px 7px;
     color: yellow;
@@ -204,7 +204,7 @@ header {
     border: 3px solid black;
 }
 
-.score, .expr, .shirtC, .shirtR, .backR, .backG, .phrase, .restart{
+.score, .expr, .shirtC, .shirtR, .backR, .backG, .phrase, .restart, .startButton{
     margin: 10px auto;
     border-radius: 20px;
 }
@@ -291,9 +291,17 @@ header {
 }
 
 .startButton {
-    background-image: url(../jpg/wollpaper10.jpg);
+    background-image: url(../jpg/start.png);
+    background-size: cover;
     width: 200px;
     height: 200px;
+    margin : auto;
+    font-size: 30pt;
+    box-shadow: red 0px 0px 7px;
+}
+
+.startButton:active{
+    filter: invert(1);
 }
 
 @media (max-height: 420px) {
