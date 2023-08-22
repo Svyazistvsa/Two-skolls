@@ -22,8 +22,5 @@ function preloadImg(arr){
     let may = new Image();
     may.src = "jpg/maybe.jpg";
     let over = new Image();
-    over.src = "jpg/gameover.jpg";
-    let sound = document.createElement("audio");
-    sound.src = "audio/bombandirovshik.mp3";
-  
+    over.src = "jpg/gameover.jpg";  
 }
