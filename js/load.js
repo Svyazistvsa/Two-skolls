@@ -23,5 +23,7 @@ function preloadImg(arr){
     may.src = "jpg/maybe.jpg";
     let over = new Image();
     over.src = "jpg/gameover.jpg";
+    let sound = document.createElement("audio");
+    sound.src = "audio/bombandirovshik.mp3";
   
 }
