@@ -45,6 +45,7 @@ function render(area, column, originClass){
     timerBox = document.createElement("div"),        
     stop = document.createElement("button");
     stop.innerText = "СТОП";
+    stop.classList.add("stop");
     game.after(timerBox);
     timerBox.append(stop);
     timerBox.classList.add("timer");    
@@ -182,7 +183,7 @@ function timer (time_limit, timerI){
         return;
     })
 
-    document.querySelector("Button").onclick = () => {
+    document.querySelector(".stop").onclick = () => {
         stopGame("00:00", timerI, "true")
         rendTitl();
         return;
