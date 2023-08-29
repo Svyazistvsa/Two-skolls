@@ -9,6 +9,8 @@ import { exShirt } from "./options.js";
 import { rendTitl } from "./menu.js";
 import { delFlip } from "./menu.js";
 import { endGame } from "./end-game.js";
+import { playing } from "./audio.js";
+import { insertAudio } from "./audio.js";
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -41,6 +43,11 @@ function render(area, column, originClass){
     if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
     
     delFlip(area);
+    
+    insertAudio("up", area);
+    insertAudio("down", area);
+    insertAudio("haha", area);
+    insertAudio("del", area);
 
     timerBox = document.createElement("div"),        
     stop = document.createElement("button");

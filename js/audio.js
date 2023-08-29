@@ -13,3 +13,6 @@ function insertAudio(track, area){
     </audio>
   `)
 }
+
+export { playing };
+export { insertAudio };
