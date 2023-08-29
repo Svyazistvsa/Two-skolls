@@ -3,7 +3,7 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis, timerI, points, timerBox, colum;
+    isThis, timerI, points,conter = 0,timerBox, colum;
     
 import { exShirt } from "./options.js";
 import { rendTitl } from "./menu.js";
@@ -136,7 +136,7 @@ function render(area, column, originClass){
 
 function flipOver(e){
     let target = e.target,
-        conter = 0,
+        
         open = game.querySelectorAll(".over"); 
     if(open.length > 1) return;
     
