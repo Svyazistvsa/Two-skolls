@@ -136,15 +136,18 @@ function render(area, column, originClass){
 
 function flipOver(e){
     let target = e.target,
+        conter = 0,
         open = game.querySelectorAll(".over"); 
     if(open.length > 1) return;
     
     if (target.classList.contains("shirt")){
         if (!isThis){            
             target.parentNode.classList.add("over");
+            playing("up");
             isThis = target.parentNode.querySelector(".face");
         } else if (isThis){            
             target.parentNode.classList.add("over");
+            playing("up");
             if (isThis.style.backgroundImage == target.parentNode.querySelector(".face").style.backgroundImage){
                 setTimeout(() => {
                     isThis.parentNode.remove();
@@ -160,7 +163,13 @@ function flipOver(e){
                     isThis.parentNode.classList.remove("over");
                     isThis = undefined;
                 }, 500);
-                setTimeout(() => target.parentNode.classList.remove("over"), 500); 
+                setTimeout(() => target.parentNode.classList.remove("over"), 500);
+                  playing("down");
+                  conter += 1;
+                  if(conter == 3){
+                    playing("haha");
+                    conter = 0;
+                  }
             }            
         }
     }    
