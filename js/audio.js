@@ -11,8 +11,8 @@ function stoping(track){
   trk.currentTime = 0.0;
 }
 
-function insertAudio(track, area){
-  area.insertAdjacentHTML("afterbegin", `<audio id="${track}" >
+function insertAudio(track, area, loop = ""){
+  area.insertAdjacentHTML("afterbegin", `<audio id="${track}" ${loop} >
       <source src="audio/${track}.ogg" type="audio/ogg" >
       <source src="audio/${track}.mp3" type="audio/mpeg" >
     </audio>`

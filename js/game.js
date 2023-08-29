@@ -45,7 +45,7 @@ function render(area, column, originClass){
     
     delFlip(area);
     
-    insertAudio("Harry", area);
+    insertAudio("Harry", area, "loop");
     insertAudio("up", area);
     insertAudio("down", area);
     insertAudio("haha", area);
