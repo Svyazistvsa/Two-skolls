@@ -45,11 +45,11 @@ function render(area, column, originClass){
     
     delFlip(area);
     
-    insertAudio("Harry", area, "loop");
+    /*insertAudio("Harry", area, "loop");
     insertAudio("up", area);
     insertAudio("down", area);
     insertAudio("haha", area);
-    insertAudio("del", area);
+    insertAudio("del", area);*/
 
     timerBox = document.createElement("div"),        
     stop = document.createElement("button");
