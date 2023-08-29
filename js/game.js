@@ -11,6 +11,7 @@ import { delFlip } from "./menu.js";
 import { endGame } from "./end-game.js";
 import { playing } from "./audio.js";
 import { insertAudio } from "./audio.js";
+import { stoping } from "./audio.js";
 
 let jpgArr = [
     {img: "jpg/skulls0.jpg", be: false},
@@ -158,7 +159,7 @@ function flipOver(e){
                     target.parentNode.remove();           
                     playing("del");    
                 }, 500);      
-                
+                conter = 0;
             } else {
                 setTimeout(() => {
                     isThis.parentNode.classList.remove("over");
@@ -203,17 +204,20 @@ function timer (time_limit, timerI){
     }
     document.addEventListener("tbn", function(e){
         stopGame("00:00", timerI, "true")
+        stoping("Harry");
         return;
     })
 
     document.querySelector(".stop").onclick = () => {
         stopGame("00:00", timerI, "true")
         rendTitl();
+        stoping("Harry");
         return;
     }
     document.querySelector('#titular').onclick = () => {
         stopGame("00:00", timerI, "true")
         rendTitl();
+        stoping("Harry");
         return;
     }
     

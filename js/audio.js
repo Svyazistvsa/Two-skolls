@@ -5,6 +5,12 @@ function playing(track){
   document.querySelector(`#${track}`).play();
 }
 
+function stoping(track){
+  let trk = document.querySelector(`#${track}`);
+  trk.pause();
+  trk.currentTime = 0.0;
+}
+
 function insertAudio(track, area){
   area.insertAdjacentHTML("afterbegin", `<audio id="${track}" >
       <source src="audio/${track}.ogg" type="audio/ogg" >
@@ -15,3 +21,4 @@ function insertAudio(track, area){
 
 export { playing };
 export { insertAudio };
+export { stoping };
