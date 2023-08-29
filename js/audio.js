@@ -6,12 +6,12 @@ function playing(track){
 }
 
 function insertAudio(track, area){
-  area.insertAdjasentHTML("afterbegin", `
-    <audio>
+  area.insertAdjasentHTML("afterbegin",
+  `<audio>
       <source src="audio/${track}.ogg" type="audio/ogg" >
       <source src="audio/${track}.mp3" type="audio/mpeg" >
-    </audio>
-  `)
+    </audio>`
+    )
 }
 
 export { playing };

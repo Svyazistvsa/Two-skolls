@@ -151,9 +151,10 @@ function flipOver(e){
                     isThis = undefined;
                }, 500);
                 setTimeout(() => {
-                    target.parentNode.remove();                    
+                    target.parentNode.remove();           
                     
-                }, 500);                
+                }, 500);      
+                playing("del");
             } else {
                 setTimeout(() => {
                     isThis.parentNode.classList.remove("over");
