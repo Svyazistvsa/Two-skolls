@@ -3,7 +3,7 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis, timerI, points,conter = 0,timerBox, colum;
+    isThis, timerI, points, conter = 0,timerBox, colum;
     
 import { exShirt } from "./options.js";
 import { rendTitl } from "./menu.js";
@@ -44,6 +44,7 @@ function render(area, column, originClass){
     
     delFlip(area);
     
+    insertAudio("Harry", area);
     insertAudio("up", area);
     insertAudio("down", area);
     insertAudio("haha", area);
@@ -155,16 +156,19 @@ function flipOver(e){
                }, 500);
                 setTimeout(() => {
                     target.parentNode.remove();           
-                    
+                    playing("del");    
                 }, 500);      
-                playing("del");
+                
             } else {
                 setTimeout(() => {
                     isThis.parentNode.classList.remove("over");
                     isThis = undefined;
                 }, 500);
-                setTimeout(() => target.parentNode.classList.remove("over"), 500);
-                  playing("down");
+                setTimeout(() => {
+                    target.parentNode.classList.remove("over")
+                    playing("down");  
+                }, 500);
+                  
                   conter += 1;
                   if(conter == 3){
                     playing("haha");
@@ -183,6 +187,8 @@ function getRandom(min, max) {
 
 function timer (time_limit, timerI){
     
+    playing("Harry");
+
     let timeP = 0, timeL,                
         span = document.createElement("span");
         
