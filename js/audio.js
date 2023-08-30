@@ -2,10 +2,12 @@
 
 let mute = document.querySelector("#mute");
 
-function muteMuse(muteBut, track){
+mute.onclick = () => document.querySelector("#Harry").pause();
+
+/* function muteMuse(muteBut, track){
   stoping(track);
   
-}
+}*/
 
 function playing(track){
   document.querySelector(`#${track}`).play();
