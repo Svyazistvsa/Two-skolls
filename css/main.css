@@ -171,7 +171,7 @@ header {
     justify-content: center;
 }
 
-.timer button, .score, .phrase, .restart, #full, #main_menu {
+.timer button, .score, .phrase, .restart, #full, #main_menu, #mute {
     background: white;    
     text-shadow: grey 2px 2px 1px;
 }
@@ -344,7 +344,7 @@ header {
         background-size: cover;
     }
     
-    #full {
+    #full, #mute {
         font-size: 10pt;
         width: 40px;
         height: 40px;
@@ -353,6 +353,11 @@ header {
         position: absolute;
         top: 1vh;
         right: 3vh;
+    }
+    
+    #mute {
+      right: 10vh;
+      font-size: 8pt;
     }
 
     header {

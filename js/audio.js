@@ -1,6 +1,12 @@
 "use strict"
 
-/*Написать функцию проигрывания музыки и импортировать*/
+let mute = document.querySelector("#mute");
+
+function muteMuse(muteBut, track){
+  stoping(track);
+  
+}
+
 function playing(track){
   document.querySelector(`#${track}`).play();
 }
