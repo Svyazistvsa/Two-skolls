@@ -2,7 +2,14 @@
 
 let mute = document.querySelector("#mute");
 
-mute.onclick = () => document.querySelector("#Harry").pause();
+mute.onclick = () => {
+  let m = document.querySelector("#Harry");
+  if(m.muted){
+    m.muted = false;
+  }else{
+    m.muted = true;
+  }  
+} 
 
 /* function muteMuse(muteBut, track){
   stoping(track);
