@@ -19,6 +19,18 @@ body {
   display: none;
 }
 
+#mute {
+        font-size: 10pt;
+        width: 40px;
+        height: 40px;
+        display: block;
+        border-radius: 50px;
+        position: absolute;
+        top: 1vh;
+        right: 3vh;
+        display: none;
+    }
+
 #container {
     display: flex;
     flex-direction: column;
@@ -358,6 +370,7 @@ header {
     #mute {
       right: 10vh;
       font-size: 8pt;
+      display: none;
     }
 
     header {

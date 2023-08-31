@@ -1,5 +1,6 @@
 "use strict"
-let full = document.querySelector("#full");
+let full = document.querySelector("#full"), 
+    cl = new Event("onclick");
     
 full.addEventListener("click", thatFull);
 

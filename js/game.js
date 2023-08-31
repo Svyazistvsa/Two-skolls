@@ -35,10 +35,10 @@ let jpgArr = [
     {img: "jpg/skulls18.jpg", be: false}
 ]
 
-
-
 function render(area, column, originClass){
-
+    if(document.querySelector("#mute")){
+      document.querySelector("#mute"). style.display = "block";
+    }
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
     if(area.querySelector(".scrn")) area.querySelector(".scrn").remove();
@@ -81,8 +81,6 @@ function render(area, column, originClass){
     }
 
     let cardArr = area.querySelectorAll(".face");
-    
-    
     faceAdd(jpgArr, cardArr, column);      
 
     if(column == 4) {
@@ -132,7 +130,6 @@ function render(area, column, originClass){
 
 function flipOver(e){
     let target = e.target,
-        
         open = game.querySelectorAll(".over"); 
     if(open.length > 1) return;
     
@@ -163,7 +160,6 @@ function flipOver(e){
                     target.parentNode.classList.remove("over")
                     playing("down");  
                 }, 500);
-                  
                   conter += 1;
                   if(conter == 3){
                     playing("haha");
@@ -181,24 +177,24 @@ function getRandom(min, max) {
 }
 
 function timer (time_limit, timerI){
-    
     playing("Harry");
-
     let timeP = 0, timeL,                
         span = document.createElement("span");
-        
         
     function fTimeLeft(time){
         const minutes = Math.floor(time / 60);
         let seconds = time % 60;
         if (seconds < 10) {
-            seconds = `0${seconds}`;            
+            seconds = `0${seconds}`;    
         }        
         return `${minutes}:${seconds}`;
     }
     document.addEventListener("tbn", function(e){
         stopGame("00:00", timerI, "true")
         stoping("Harry");
+        if(document.querySelector("#mute")){
+      document.querySelector("#mute"). style.display = "none";
+        }
         return;
     })
 
@@ -206,12 +202,18 @@ function timer (time_limit, timerI){
         stopGame("00:00", timerI, "true")
         rendTitl();
         stoping("Harry");
+        if(document.querySelector("#mute")){
+      document.querySelector("#mute"). style.display = "none";
+        }
         return;
     }
     document.querySelector('#titular').onclick = () => {
         stopGame("00:00", timerI, "true")
         rendTitl();
         stoping("Harry");
+        if(document.querySelector("#mute")){
+      document.querySelector("#mute"). style.display = "none";
+        }
         return;
     }
     
