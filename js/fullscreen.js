@@ -4,8 +4,6 @@ let full = document.querySelector("#full"),
     
 full.addEventListener("click", thatFull);
 
-full.dispatchEvent(cl);
-
 function thatFull(){
   if(!document.fullscreenElement){
     document.documentElement.requestFullscreen();
