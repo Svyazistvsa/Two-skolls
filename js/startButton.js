@@ -10,7 +10,9 @@ let startButton = document.querySelector(".startButton"),
     
     startButton.addEventListener("pointerdown", () =>{
         playing("vzryiv");
-        startButton.addEventListener("pointerup", quickStart);
+        startButton.addEventListener("pointerup", () => {
+            setTimeout(quickStart, 500);
+        });
     } );
 
     function quickStart(){
