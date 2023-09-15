@@ -10,7 +10,7 @@ import { rendTitl } from "./menu.js";
 import { delFlip } from "./menu.js";
 import { endGame } from "./end-game.js";
 import { playing } from "./audio.js";
-import { insertAudio } from "./audio.js";
+//import { insertAudio } from "./audio.js";
 import { stoping } from "./audio.js";
 
 let jpgArr = [
@@ -193,7 +193,7 @@ function timer (time_limit, timerI){
         stopGame("00:00", timerI, "true")
         stoping("Harry");
         if(document.querySelector("#mute")){
-      document.querySelector("#mute"). style.display = "none";
+            document.querySelector("#mute"). style.display = "none";
         }
         return;
     })
