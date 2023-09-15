@@ -72,21 +72,32 @@ header {
   text-align: center;
 }
 
-.list {    
+.list {
+    position: absolute;
+    min-height: 40%;
+    background-image: url(../jpg/wallpaper1.jpg);
+    background-size: auto 100%;
+    border: solid 1px black;
+    border-radius: 10px ;
+    box-shadow: gray 2px 1px 7px; 
     display: none;
 }
 
 .block{
     position: absolute;
-    top: 55px;    
+    top: 75px;    
     list-style-type: none;
-    width: 100px;
+    width: 200px;
     display: block;
     z-index: 1;
 }
 
 .list > li {
-    margin: 10px auto;        
+    margin: 15px auto;
+    border: 1px solid black;
+    font-size: 15pt;
+    border-radius: 7px;
+    text-align: center;      
 }
 
 #main_menu, .list > li {

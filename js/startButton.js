@@ -8,7 +8,7 @@ let startButton = document.querySelector(".startButton"),
     variantCells = form.elements.cells,
     variantArr = Array.from(variantCells);
     
-    startButton.addEventListener("pointerdown", () =>{
+    startButton.addEventListener("pointerdown", () => {
         playing("vzryiv");
         startButton.addEventListener("pointerup", () => {
             setTimeout(quickStart, 500);
