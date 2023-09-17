@@ -25,7 +25,7 @@ function endGame(points, column){
     exprSrc.append(score);
     game.append(endScr);
     endScr.append(phrase);
-   endScr.append(input);
+    endScr.append(input);
     
     clmn = column;
     

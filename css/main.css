@@ -402,17 +402,10 @@ header {
         position: absolute;
         top: 0;
         min-height: 90%;
-        width: 250px;
-        background-image: url(../jpg/wallpaper1.jpg);
-        background-size: auto 100%;
-        border: solid 1px black;
-        border-radius: 0 20px 20px 0;
-        box-shadow: gray 2px 1px 7px;
+        width: 250px;       
     }
 
-    .list > li {
-        margin: 15px auto;
-        border: 1px solid black;
+    .list > li {        
         font-size: 20pt;
         border-radius: 20px;
         text-align: center;

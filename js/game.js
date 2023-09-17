@@ -36,8 +36,8 @@ let jpgArr = [
 ]
 
 function render(area, column, originClass){
-    if(document.querySelector("#mute")){
-      document.querySelector("#mute"). style.display = "block";
+    if(document.querySelector("#mute").style.display == "none"){
+      document.querySelector("#mute").style.display = "block";
     }
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
@@ -192,9 +192,6 @@ function timer (time_limit, timerI){
     document.addEventListener("tbn", function(e){
         stopGame("00:00", timerI, "true")
         stoping("Harry");
-        if(document.querySelector("#mute")){
-            document.querySelector("#mute"). style.display = "none";
-        }
         return;
     })
 
@@ -202,8 +199,8 @@ function timer (time_limit, timerI){
         stopGame("00:00", timerI, "true")
         rendTitl();
         stoping("Harry");
-        if(document.querySelector("#mute")){
-      document.querySelector("#mute"). style.display = "none";
+        if(document.querySelector("#mute").style.display == "block"){
+            document.querySelector("#mute").style.display = "none";
         }
         return;
     }
@@ -211,8 +208,8 @@ function timer (time_limit, timerI){
         stopGame("00:00", timerI, "true")
         rendTitl();
         stoping("Harry");
-        if(document.querySelector("#mute")){
-      document.querySelector("#mute"). style.display = "none";
+        if(document.querySelector("#mute").style.display == "block"){
+            document.querySelector("#mute").style.display = "none";
         }
         return;
     }
