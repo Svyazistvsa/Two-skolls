@@ -4,9 +4,14 @@ import { render } from "./game.js";
 import { playing } from "./audio.js";
 
 let clmn, 
-    game = document.querySelector("#game"); 
+    game = document.querySelector("#game"),
+    mute = document.querySelector("#mute"); 
 
 function endGame(points, column){
+
+    if(mute.style.display == "block"){
+        mute.style.display = "none";
+    }
     
     let exprSrc = document.createElement("div"),
         score = document.createElement("div"),
