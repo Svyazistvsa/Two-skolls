@@ -97,7 +97,8 @@ header {
     border: 1px solid black;
     font-size: 15pt;
     border-radius: 7px;
-    text-align: center;      
+    text-align: center;     
+    cursor: pointer; 
 }
 
 #main_menu, .list > li {
