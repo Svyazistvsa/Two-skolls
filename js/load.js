@@ -20,6 +20,10 @@ function preloadImg(arr){
     insertAudio("Harry",game,"loop");
     insertAudio("del",game);
     insertAudio("vzryiv",game);
+    insertAudio("akkord",game);
+    insertAudio("fanfar",game);
+    insertAudio("yarkiy",game);
+
 
     for(let i = 0; i < arr.length; i++){
       let image = new Image();
