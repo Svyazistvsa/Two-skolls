@@ -3,14 +3,13 @@
 let game = document.querySelector('#game'),
     cells16 = document.querySelector('#cells16'),
     cells36 = document.querySelector('#cells36'),
-    isThis, timerI, points, conter = 0,timerBox, colum;
+    isThis, timerI, points, conter = 0,timerBox, colum, mute = document.querySelector("#mute");
     
 import { exShirt } from "./options.js";
 import { rendTitl } from "./menu.js";
 import { delFlip } from "./menu.js";
 import { endGame } from "./end-game.js";
 import { playing } from "./audio.js";
-//import { insertAudio } from "./audio.js";
 import { stoping } from "./audio.js";
 
 let jpgArr = [
@@ -36,8 +35,8 @@ let jpgArr = [
 ]
 
 function render(area, column, originClass){
-    if(document.querySelector("#mute").style.display == "none"){
-      document.querySelector("#mute").style.display = "block";
+    if(mute.style.display == "none"){
+      mute.style.display = "block";
     }
     
     if(area.querySelector(`.${originClass}`)) area.querySelector(`.${originClass}`).style.display = "none";
@@ -199,8 +198,8 @@ function timer (time_limit, timerI){
         stopGame("00:00", timerI, "true")
         rendTitl();
         stoping("Harry");
-        if(document.querySelector("#mute").style.display == "block"){
-            document.querySelector("#mute").style.display = "none";
+        if(mute.style.display == "block"){
+            mute.style.display = "none";
         }
         return;
     }
@@ -208,8 +207,8 @@ function timer (time_limit, timerI){
         stopGame("00:00", timerI, "true")
         rendTitl();
         stoping("Harry");
-        if(document.querySelector("#mute").style.display == "block"){
-            document.querySelector("#mute").style.display = "none";
+        if(mute.style.display == "block"){
+            mute.style.display = "none";
         }
         return;
     }
