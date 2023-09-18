@@ -11,15 +11,15 @@ function rendScrean (){
         document.body.insertAdjacentHTML('beforeend', `<div class="screen">
         <div class="shirtC shirt0" ></div>
         <div class="shirtR" >
-            <input name="shirt" type="radio" value="shirt0" class="rad" checked></input>
-            <input name="shirt" type="radio" value="shirt1" class="rad"></input>
-            <input name="shirt" type="radio" value="shirt2" class="rad"></input>
+            <input name="shirt" type="radio" value="shirt0" class="radio" checked></input>
+            <input name="shirt" type="radio" value="shirt1" class="radio"></input>
+            <input name="shirt" type="radio" value="shirt2" class="radio"></input>
         </div>
         <div class="backG" ></div>
         <div class="backR" >
-            <input name="woll" type="radio" value="jpg/wollpaper10.jpg" class="rad" checked></input>
-            <input name="woll" type="radio" value="jpg/wollpaper2.jpg" class="rad"></input>
-            <input name="woll" type="radio" value="jpg/wollpaper3.jpg" class="rad"></input>
+            <input name="woll" type="radio" value="jpg/wollpaper10.jpg" class="radio" checked></input>
+            <input name="woll" type="radio" value="jpg/wollpaper2.jpg" class="radio"></input>
+            <input name="woll" type="radio" value="jpg/wollpaper3.jpg" class="radio"></input>
         </div>
         <input type="button" value="Принять" name="confirm" class="butMenu"> 
         <input type="button" value="Отбой" name="cansel" class="butMenu">   
