@@ -11,15 +11,21 @@ function rendScrean (){
         document.body.insertAdjacentHTML('beforeend', `<div class="screen">
         <div class="shirtC shirt0" ></div>
         <div class="shirtR" >
-            <input name="shirt" type="radio" value="shirt0" class="radio" checked></input>
-            <input name="shirt" type="radio" value="shirt1" class="radio"></input>
-            <input name="shirt" type="radio" value="shirt2" class="radio"></input>
+            <input name="shirt" type="radio" value="shirt0" id="s0" class="radio" checked></input>
+            <label for="s0"></label>
+            <input name="shirt" type="radio" value="shirt1" id="s1" class="radio"></input>
+            <label for="s1"></label>
+            <input name="shirt" type="radio" value="shirt2" id="s2" class="radio"></input>
+            <label for="s2"></label>
         </div>
         <div class="backG" ></div>
         <div class="backR" >
-            <input name="woll" type="radio" value="jpg/wollpaper10.jpg" class="radio" checked></input>
-            <input name="woll" type="radio" value="jpg/wollpaper2.jpg" class="radio"></input>
-            <input name="woll" type="radio" value="jpg/wollpaper3.jpg" class="radio"></input>
+            <input name="woll" type="radio" id="w1" value="jpg/wollpaper10.jpg" class="radio" checked></input>
+            <label for="w1"></label>
+            <input name="woll" type="radio" id="w2" value="jpg/wollpaper2.jpg" class="radio"></input>
+            <label for="w2"></label>
+            <input name="woll" type="radio" id="w3" value="jpg/wollpaper3.jpg" class="radio"></input>
+            <label for="w3"></label>
         </div>
         <input type="button" value="Принять" name="confirm" class="butMenu"> 
         <input type="button" value="Отбой" name="cansel" class="butMenu">   

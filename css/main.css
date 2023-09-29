@@ -328,32 +328,63 @@ header {
     filter: invert(1);
 }
 
-.radio {
-  position: absolute;
-  z-index: - 1;
-  opacity: 0;
+input[type="radio"]:checked, 
+input[type="radio"]:not(:checked){
+    position: absolute;
+    opacity: 0;
 }
 
-.radio+label {
-    display: inline-flex;
-    align-items: center;
-    user-select: none;
-}
-
-.radio+label::before {
-    content: '';
+input[type="radio"]:checked + label, 
+input[type="radio"]:not(:checked) + label {
     display: inline-block;
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 50%;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 50% 50%;
+    position: relative;
+    padding-left: 28px;
+    line-height: 20px;
+    cursor: pointer;
+    margin-top: 5px;
 }
+
+input[type="radio"]:checked + label:before, 
+input[type="radio"]:not(:checked) + label:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dd6413;
+    background-color: #ffffff;
+}
+
+input[type="radio"]:checked + label:before, 
+input[type="radio"]:not(:checked) + label:before {
+    border-radius: 100%;
+}
+
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    content: "";
+    position: absolute;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+input[type="radio"]:checked + label:after, 
+input[type="radio"]:not(:checked) + label:after {
+    left: 5px;
+    top: 5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: #b40808;
+}
+
+input[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+}
+
 
 @media (max-height: 420px) {
     body {
