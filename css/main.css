@@ -195,22 +195,26 @@ header {
     justify-content: center;
 }
 
-.timer button, .score, .phrase, .restart, #full, #main_menu, #mute {
+.timer button, .score, .phrase, .restart, #full, #main_menu, #mute, .butMenu {
     background: white;    
     text-shadow: grey 2px 2px 1px;
 }
 
-.timer button, .score, .timer span, .phrase, .restart, #full {
+.timer button, .score, .timer span, .phrase, .restart, #full, .butMenu {
     text-align: center;
     font-size: 40pt;    
     color: black;
   }
   
-.timer button {
+.timer button, .butMenu {
   border-radius: 20px;
 }
+
+.butMenu{
+    font-size: 20pt;
+}
   
-.timer span, header > h1, #copyright, #banner span, .startButton{
+.timer span, header > h1, #copyright, #banner span, .startButton, label{
     display: block;    
     text-shadow: red 2px 2px 7px;
     color: yellow;
