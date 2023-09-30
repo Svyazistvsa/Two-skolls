@@ -13,6 +13,7 @@ mute.onclick = () => {
 
 function playing(track){
   document.querySelector(`#${track}`).play();
+  document.querySelector(`#${track}`).volume = .1;
 }
 
 function stoping(track){
@@ -22,7 +23,7 @@ function stoping(track){
 }
 
 function insertAudio(track, area, loop = ""){
-  area.insertAdjacentHTML("afterbegin", `<audio id="${track}" ${loop} >
+  area.insertAdjacentHTML("afterbegin", `<audio id="${track}" ${loop}  volume="0.5">
       <source src="audio/${track}.ogg" type="audio/ogg" >
       <source src="audio/${track}.mp3" type="audio/mpeg" >
     </audio>`
